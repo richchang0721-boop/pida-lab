@@ -5,6 +5,13 @@ import Footer from '../components/Footer'
 import ArticleCard from '../components/ArticleCard'
 import { CATEGORIES } from '../lib/categories'
 
+const START_HERE = [
+  { step: '01', label: 'Problem Layer', title: 'Why AI Alignment Might Be Solving the Wrong Problem', href: '/posts/pida-entry-point' },
+  { step: '02', label: 'Responsibility Layer', title: '當 AI 做錯決策，誰來負責？', href: '/posts/ai-decision-responsibility' },
+  { step: '03', label: 'Relationship Layer', title: '你信任 AI，但你從未設計過這段關係', href: '/posts/ai-trust-relationship' },
+  { step: '04', label: 'System Layer', title: '大多數 AI 系統失敗，不是因為模型太爛', href: '/posts/ai-system-design-failure' },
+]
+
 export async function getStaticProps() {
   const { getSortedPostsData } = require('../lib/posts.server')
   const allPosts = getSortedPostsData()
@@ -16,7 +23,7 @@ export default function Home({ latestPosts }) {
     <>
       <Head>
         <title>PIDA-LAB — Rethinking AI Systems, Decision &amp; Responsibility</title>
-        <meta name="description" content="AI is not a capability problem. It is a relationship problem." />
+        <meta name="description" content="AI alignment is solving the wrong problem. AI is not a capability problem. It is a relationship structure failure." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Nav />
@@ -24,14 +31,14 @@ export default function Home({ latestPosts }) {
       <section className="hero">
         <div className="hero-label">PIDA-LAB · AI Deconstruction Station</div>
         <h1>
-          AI is not a <em>capability</em> problem.<br />
-          It is a <em>relationship</em> problem.
+          AI alignment is solving<br />
+          the <em>wrong problem.</em>
         </h1>
         <p className="hero-desc">
-          我們不解讀 AI 的技術邊界，<br />
-          我們解構 AI 與人之間的決策、責任與信任結構。
+          AI is not a capability problem.<br />
+          It is a <span style={{color:'var(--text)', fontWeight:500}}>relationship structure failure.</span>
         </p>
-        <Link href="/posts" className="hero-cta">探索所有文章 →</Link>
+        <Link href="/posts/pida-entry-point" className="hero-cta">Read the Entry Point →</Link>
         <div className="hero-stats">
           <div>
             <span className="hero-stat-num">{latestPosts.length}+</span>
@@ -45,6 +52,27 @@ export default function Home({ latestPosts }) {
             <span className="hero-stat-num">0%</span>
             <span className="hero-stat-label">廢話含量</span>
           </div>
+        </div>
+      </section>
+
+      <div className="divider" />
+
+      <section className="section">
+        <div className="section-header">
+          <span className="section-title">Start Here · 從這裡開始</span>
+          <Link href="/posts/pida-entry-point" className="section-link">Entry Point →</Link>
+        </div>
+        <div className="start-here-grid">
+          {START_HERE.map(item => (
+            <Link key={item.step} href={item.href}>
+              <div className="start-here-card">
+                <div className="start-here-step">{item.step}</div>
+                <div className="start-here-label">{item.label}</div>
+                <div className="start-here-title">{item.title}</div>
+                <div className="start-here-arrow">→</div>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
