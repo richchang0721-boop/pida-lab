@@ -6,7 +6,7 @@ import ArticleCard from '../components/ArticleCard'
 import { CATEGORIES } from '../lib/categories'
 
 const START_HERE = [
-  { step: '01', label: 'Problem Layer', title: 'Why AI Alignment Might Be Solving the Wrong Problem', href: '/posts/pida-entry-point' },
+  { step: '01', label: 'Entry Point', title: 'PIDA Entry Point — This Is Not a Blog. This Is a System.', href: '/posts/pida-entry-point' },
   { step: '02', label: 'Responsibility Layer', title: '當 AI 做錯決策，誰來負責？', href: '/posts/ai-decision-responsibility' },
   { step: '03', label: 'Relationship Layer', title: '你信任 AI，但你從未設計過這段關係', href: '/posts/ai-trust-relationship' },
   { step: '04', label: 'System Layer', title: '大多數 AI 系統失敗，不是因為模型太爛', href: '/posts/ai-system-design-failure' },
