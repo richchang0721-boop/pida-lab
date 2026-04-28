@@ -340,19 +340,23 @@ nav {
 }
 
 /* START HERE BLOCK */
+/* START HERE BLOCK - updated */
 .start-here-block {
   background: var(--surface);
-  border: 1px solid var(--border);
-  padding: 2rem 2.5rem;
-  display: flex; flex-direction: column; gap: 1.8rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 24px;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-bottom: 2rem;
+  display: flex; flex-direction: column; gap: 2.4rem;
 }
-.start-here-group { display: flex; flex-direction: column; gap: 6px; }
+.start-here-group { display: flex; flex-direction: column; gap: 10px; }
 .start-here-intro {
   font-family: var(--mono); font-size: 0.75rem;
   color: var(--text-muted); letter-spacing: 0.03em;
 }
 .start-here-link {
-  font-family: var(--mono); font-size: 0.85rem;
+  font-family: var(--mono); font-size: 0.89rem;
   color: var(--accent); letter-spacing: 0.04em;
   transition: opacity 0.2s;
 }

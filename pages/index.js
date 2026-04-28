@@ -59,7 +59,7 @@ export default function Home({ latestPosts }) {
       {/* START HERE */}
       <section className="section">
         <div className="section-header">
-          <span className="section-title">⬤ Start Here</span>
+          <span className="section-title" style={{color:"var(--text)", fontWeight:700, fontSize:"0.95rem", letterSpacing:"0.1em"}}>⬤ START HERE</span>
         </div>
         <div className="start-here-block">
           <div className="start-here-group">
