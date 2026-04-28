@@ -5,13 +5,6 @@ import Footer from '../components/Footer'
 import ArticleCard from '../components/ArticleCard'
 import { CATEGORIES } from '../lib/categories'
 
-const START_HERE = [
-  { step: '01', label: 'Entry Point', title: 'PIDA Entry Point — This Is Not a Blog. This Is a System.', href: '/posts/pida-entry-point' },
-  { step: '02', label: 'Responsibility Layer', title: '當 AI 做錯決策，誰來負責？', href: '/posts/ai-decision-responsibility' },
-  { step: '03', label: 'Relationship Layer', title: '你信任 AI，但你從未設計過這段關係', href: '/posts/ai-trust-relationship' },
-  { step: '04', label: 'System Layer', title: '大多數 AI 系統失敗，不是因為模型太爛', href: '/posts/ai-system-design-failure' },
-]
-
 export async function getStaticProps() {
   const { getSortedPostsData } = require('../lib/posts.server')
   const allPosts = getSortedPostsData()
@@ -38,7 +31,13 @@ export default function Home({ latestPosts }) {
           AI is not a capability problem.<br />
           It is a <span style={{color:'var(--text)', fontWeight:500}}>relationship structure failure.</span>
         </p>
-        <Link href="/posts/pida-entry-point" className="hero-cta">Read the Entry Point →</Link>
+        <div className="hero-cta-wrap">
+          <p className="hero-cta-label">If this is your first time here:</p>
+          <div className="hero-cta-row">
+            <span className="hero-cta-side">Start Here →</span>
+            <Link href="/posts/pida-entry-point" className="hero-cta">PIDA Entry Point</Link>
+          </div>
+        </div>
         <div className="hero-stats">
           <div>
             <span className="hero-stat-num">{latestPosts.length}+</span>
@@ -57,27 +56,30 @@ export default function Home({ latestPosts }) {
 
       <div className="divider" />
 
+      {/* START HERE */}
       <section className="section">
         <div className="section-header">
-          <span className="section-title">Start Here · 從這裡開始</span>
-          <Link href="/posts/pida-entry-point" className="section-link">Entry Point →</Link>
+          <span className="section-title">⬤ Start Here</span>
         </div>
-        <div className="start-here-grid">
-          {START_HERE.map(item => (
-            <Link key={item.step} href={item.href}>
-              <div className="start-here-card">
-                <div className="start-here-step">{item.step}</div>
-                <div className="start-here-label">{item.label}</div>
-                <div className="start-here-title">{item.title}</div>
-                <div className="start-here-arrow">→</div>
-              </div>
-            </Link>
-          ))}
+        <div className="start-here-block">
+          <div className="start-here-group">
+            <p className="start-here-intro">If this is your first time here:</p>
+            <Link href="/posts/pida-entry-point" className="start-here-link">→ PIDA Entry Point</Link>
+          </div>
+          <div className="start-here-group">
+            <p className="start-here-intro">If you want to understand AI decision failure:</p>
+            <Link href="/posts/ai-decision-illusions" className="start-here-link">→ AI Decision Illusions</Link>
+          </div>
+          <div className="start-here-group">
+            <p className="start-here-intro">If you want to understand responsibility:</p>
+            <Link href="/posts/responsibility-structure" className="start-here-link">→ Responsibility Structure</Link>
+          </div>
         </div>
       </section>
 
       <div className="divider" />
 
+      {/* LATEST ARTICLES */}
       <section className="section">
         <div className="section-header">
           <span className="section-title">最新文章 · Latest Posts</span>
@@ -88,6 +90,7 @@ export default function Home({ latestPosts }) {
         </div>
       </section>
 
+      {/* CATEGORIES */}
       <section className="section">
         <div className="section-header">
           <span className="section-title">分類 · Categories</span>
