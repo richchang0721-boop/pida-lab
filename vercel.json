@@ -1,3 +1,15 @@
 {
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "redirects": [
+    {
+      "source": "https://pida-lab.vercel.app/:path*",
+      "destination": "https://www.pida-lab.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "https://pida-lab.com/:path*",
+      "destination": "https://www.pida-lab.com/:path*",
+      "permanent": true
+    }
+  ]
 }

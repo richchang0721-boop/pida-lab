@@ -18,6 +18,8 @@ export default function Home({ latestPosts }) {
         <title>PIDA-LAB — Rethinking AI Systems, Decision &amp; Responsibility</title>
         <meta name="description" content="AI alignment is solving the wrong problem. AI is not a capability problem. It is a relationship structure failure." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://www.pida-lab.com/" />
+        <meta property="og:url" content="https://www.pida-lab.com/" />
       </Head>
       <Nav />
 
