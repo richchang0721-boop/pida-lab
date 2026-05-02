@@ -12,7 +12,7 @@ export default function Nav() {
         <li><Link href="/categories">Categories</Link></li>
         <li><Link href="/posts">All Posts</Link></li>
         <li><Link href="/about">About</Link></li>
-        <li><Link href="/contact">Contact</Link></li>
+        <li><Link href="/demo" style={{color:'var(--accent)'}}>Demo</Link></li>
       </ul>
     </nav>
   )
