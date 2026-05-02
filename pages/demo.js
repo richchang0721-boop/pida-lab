@@ -153,8 +153,8 @@ export default function Demo() {
           <h1 className="static-h1">STME Demo</h1>
           <p className="demo-tagline">A structured decision-space explorer.</p>
           <div className="demo-desc">
-            <p>This demo does not make decisions for users.</p>
-            <p>It preserves multiple states, identifies structural pressure,<br />and ranks possible transitions without forcing premature closure.</p>
+            <p>STME is not a decision tool. It is a system for preserving decision structure under uncertainty.</p>
+            <p>This demo does not provide answers. It exposes the internal states, pressures, and transitions that shape a decision before it collapses into a single outcome.</p>
           </div>
         </div>
 
