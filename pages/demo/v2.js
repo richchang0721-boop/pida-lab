@@ -63,6 +63,7 @@ Rules:
 - Do not include explanations.
 - Do not make the final decision.`
 
+// ── Helpers ──────────────────────────────────────────────
 function priorityScore(t) {
   if (!t.cost || !t.time) return 0
   return Math.round((t.impact * t.controllability) / (t.cost * t.time) * 1000) / 1000
@@ -70,22 +71,93 @@ function priorityScore(t) {
 
 function priorityLevel(score) {
   if (score >= 1.5) return { label: 'Critical', cls: 'lvl-critical' }
-  if (score >= 1.0) return { label: 'High', cls: 'lvl-high' }
-  if (score >= 0.6) return { label: 'Medium', cls: 'lvl-medium' }
+  if (score >= 1.0) return { label: 'High',     cls: 'lvl-high' }
+  if (score >= 0.6) return { label: 'Medium',   cls: 'lvl-medium' }
   return { label: 'Low', cls: 'lvl-low' }
 }
 
-export default function DemoV1() {
+// ── Error categorisation ──────────────────────────────────
+function categoriseError(e, status) {
+  const msg = e?.message || ''
+  if (status === 401 || msg.toLowerCase().includes('api key') || msg.toLowerCase().includes('invalid_api_key')) {
+    return 'API Key Error → Please check your API Key'
+  }
+  if (status === 429 || msg.toLowerCase().includes('insufficient') || msg.toLowerCase().includes('quota') || msg.toLowerCase().includes('credit')) {
+    return 'Insufficient Credit → Please add credits'
+  }
+  if (msg.toLowerCase().includes('json') || msg.toLowerCase().includes('parse')) {
+    return 'JSON Error → Invalid system output format'
+  }
+  return msg || 'Unknown Error → Please try again'
+}
+
+// ── Input Guidance prompts ────────────────────────────────
+const SUGGESTIONS = [
+  'Should I change jobs?',
+  'Should I start a business?',
+  'Should I move to another country?',
+]
+
+// ── Download helper ───────────────────────────────────────
+function downloadJSON(data) {
+  const ts   = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19)
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' })
+  const url  = URL.createObjectURL(blob)
+  const a    = document.createElement('a')
+  a.href     = url
+  a.download = `stme_result_${ts}.json`
+  a.click()
+  URL.revokeObjectURL(url)
+}
+
+// ── Interpretation generator (static V2 logic) ───────────
+function buildInterpretation(states, transitions) {
+  const userDriven = states.filter(s => s.perspective === 'internal').length
+  const extDriven  = states.filter(s => s.perspective === 'external').length
+  const active     = states.filter(s => s.dynamics === 'active').length
+  const staticS    = states.filter(s => s.dynamics === 'static').length
+  const coreReal   = states.filter(s => s.role === 'core' && s.validity === 'real').length
+  const coreVirt   = states.filter(s => s.role === 'core' && s.validity === 'potential').length
+  const top        = transitions[0]
+
+  const domLine = userDriven >= extDriven
+    ? 'This decision space is currently dominated by internal evaluation.'
+    : 'This decision space is currently shaped by external conditions.'
+
+  const pressLine = extDriven > 0 && extDriven < userDriven
+    ? 'External pressure is present but not decisive.'
+    : extDriven >= userDriven
+    ? 'External factors carry significant structural weight.'
+    : 'Internal factors appear sufficient to drive this decision.'
+
+  const actionLine = staticS > active
+    ? 'The system suggests that before taking action,\nalignment between current satisfaction and long-term direction should be clarified.'
+    : 'The system identifies active momentum — transition can begin without full resolution of all states.'
+
+  const feasLine = coreVirt > coreReal
+    ? `Core feasibility remains partially potential. Grounding ψ-states before committing resources is advisable.`
+    : `Core states are grounded in real conditions. Structural risk is reduced.`
+
+  const topLine = top
+    ? `Highest-priority transition: "${top.name}" (Score ${top.score}). This path offers the best balance of impact and controllability relative to cost.`
+    : ''
+
+  return [domLine, pressLine, '', actionLine, '', feasLine, topLine].filter(l => l !== undefined).join('\n')
+}
+
+// ─────────────────────────────────────────────────────────
+export default function DemoV2() {
   const [apiKey, setApiKey]     = useState('')
   const [question, setQuestion] = useState('')
   const [loading, setLoading]   = useState(false)
   const [result, setResult]     = useState(null)
   const [error, setError]       = useState('')
   const [showKey, setShowKey]   = useState(false)
+  const [copied, setCopied]     = useState(false)
 
   async function handleRun() {
-    if (!apiKey.trim())    { setError('Please enter your OpenAI API key.'); return }
-    if (!question.trim())  { setError('Please enter a decision question.'); return }
+    if (!apiKey.trim())   { setError('API Key Error → Please check your API Key'); return }
+    if (!question.trim()) { setError('Please enter a decision question.'); return }
     setError(''); setResult(null); setLoading(true)
 
     try {
@@ -107,18 +179,27 @@ export default function DemoV1() {
 
       if (!res.ok) {
         const err = await res.json()
-        throw new Error(err.error?.message || `API error ${res.status}`)
+        throw Object.assign(new Error(err.error?.message || ''), { status: res.status })
       }
 
       const data    = await res.json()
       const content = data.choices[0].message.content
-      const parsed  = JSON.parse(content)
+      let parsed
+      try { parsed = JSON.parse(content) }
+      catch { throw new Error('JSON parse failed') }
       setResult(parsed)
     } catch (e) {
-      setError(e.message || 'Something went wrong.')
+      setError(categoriseError(e, e.status))
     } finally {
       setLoading(false)
     }
+  }
+
+  function handleCopyResult() {
+    if (!result) return
+    navigator.clipboard.writeText(JSON.stringify(result, null, 2))
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
   }
 
   const transitions = result
@@ -130,18 +211,20 @@ export default function DemoV1() {
   const external   = states.filter(s => s.content.startsWith('[External]'))
   const structural = states.filter(s => s.content.startsWith('[Structural]'))
 
-  const coreReal    = states.filter(s => s.role === 'core' && s.validity === 'real').length
-  const coreVirtual = states.filter(s => s.role === 'core' && s.validity === 'potential').length
-  const userDriven  = states.filter(s => s.perspective === 'internal').length
-  const extDriven   = states.filter(s => s.perspective === 'external').length
-  const active      = states.filter(s => s.dynamics === 'active').length
-  const staticS     = states.filter(s => s.dynamics === 'static').length
+  const coreReal   = states.filter(s => s.role === 'core' && s.validity === 'real').length
+  const coreVirtual= states.filter(s => s.role === 'core' && s.validity === 'potential').length
+  const userDriven = states.filter(s => s.perspective === 'internal').length
+  const extDriven  = states.filter(s => s.perspective === 'external').length
+  const active     = states.filter(s => s.dynamics === 'active').length
+  const staticS    = states.filter(s => s.dynamics === 'static').length
+
+  const interpretation = result ? buildInterpretation(states, transitions) : ''
 
   return (
     <>
       <Head>
-        <title>STME V1 — Core Engine · PIDA-LAB</title>
-        <meta name="description" content="STME V1: Pure structural representation of decision states and transitions. No interpretation layer." />
+        <title>STME V2 — Interactive Demo · PIDA-LAB</title>
+        <meta name="description" content="STME V2: Adds interpretation and user guidance. Designed to make decision structures understandable." />
       </Head>
       <Nav />
 
@@ -151,21 +234,15 @@ export default function DemoV1() {
         <div className="demo-header">
           <Link href="/demo" className="back-link">← Demo Index</Link>
           <div className="v1-version-badge">
-            <span className="demo-version-dot dot-v1" />
-            V1 · Core Engine
+            <span className="demo-version-dot dot-v2" />
+            V2 · Interactive Demo
           </div>
-          <h1 className="static-h1">STME V1</h1>
-          <p className="demo-tagline">Pure structural representation of decision states and transitions.</p>
+          <h1 className="static-h1">STME V2</h1>
+          <p className="demo-tagline">Adds interpretation and user guidance.</p>
           <div className="demo-desc">
             <p>STME is not a decision tool. It is a system for preserving decision structure under uncertainty.</p>
-            <p>This demo does not provide answers. It exposes the internal states, pressures, and transitions that shape a decision before it collapses into a single outcome.</p>
+            <p>This version includes an interpretation layer to help you understand what the structural output means.</p>
           </div>
-        </div>
-
-        {/* V1 RAW ENGINE NOTICE */}
-        <div className="v1-engine-notice">
-          <span className="v1-engine-tag">RAW OUTPUT</span>
-          <p>This version reflects the raw STME engine output. No interpretation is provided.</p>
         </div>
 
         <div className="static-divider" />
@@ -178,6 +255,24 @@ export default function DemoV1() {
             <p>Your API key is used only in your browser/session and is not stored by PIDA Lab.</p>
           </div>
         </div>
+
+        {/* INPUT GUIDANCE — shown only when question is empty */}
+        {!question && (
+          <div className="v2-input-guidance">
+            <span className="v2-guidance-label">Try asking:</span>
+            <div className="v2-guidance-list">
+              {SUGGESTIONS.map(s => (
+                <button
+                  key={s}
+                  className="v2-guidance-item"
+                  onClick={() => setQuestion(s)}
+                >
+                  — {s}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* INPUT FORM */}
         <div className="demo-form">
@@ -208,7 +303,12 @@ export default function DemoV1() {
             />
           </div>
 
-          {error && <div className="demo-error">{error}</div>}
+          {error && (
+            <div className="demo-error v2-error-block">
+              <span className="v2-error-icon">✕</span>
+              {error}
+            </div>
+          )}
 
           <button
             className="demo-run-btn"
@@ -292,8 +392,11 @@ export default function DemoV1() {
               </div>
             </div>
 
-            {/* TRANSITIONS */}
+            {/* TRANSITIONS + SCORE TRANSPARENCY */}
             <div className="demo-section-title" style={{ marginTop: '2rem' }}>Transitions · Priority Ranked</div>
+            <div className="v2-score-formula">
+              Score = (Impact × Controllability) / (Cost × Time) &nbsp;·&nbsp; Higher score → more structurally favorable transition
+            </div>
             <div className="demo-transitions">
               {transitions.map((t, i) => {
                 const lvl = priorityLevel(t.score)
@@ -335,18 +438,31 @@ export default function DemoV1() {
               </div>
             </div>
 
-            {/* V1 RAW JSON BLOCK */}
-            <div className="v1-raw-block">
-              <div className="v1-raw-header">
-                <span className="v1-raw-label">RAW JSON OUTPUT</span>
+            {/* INTERPRETATION LAYER — V2 exclusive, after Final STME Note */}
+            <div className="v2-interpretation">
+              <div className="v2-interpretation-header">
+                <span className="v2-interpretation-label">— INTERPRETATION —</span>
                 <button
                   className="v1-raw-copy"
-                  onClick={() => navigator.clipboard.writeText(JSON.stringify(result, null, 2))}
+                  onClick={() => navigator.clipboard.writeText(interpretation)}
                 >
-                  Copy JSON
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="14" height="14">
+                    <rect x="9" y="9" width="13" height="13" rx="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                  </svg>
                 </button>
               </div>
-              <pre className="v1-raw-pre">{JSON.stringify(result, null, 2)}</pre>
+              <pre className="v2-interpretation-body">{interpretation}</pre>
+            </div>
+
+            {/* RESULT EXPORT */}
+            <div className="v2-export-row">
+              <button className="v2-export-btn" onClick={handleCopyResult}>
+                {copied ? '✓ Copied' : '[Copy Result]'}
+              </button>
+              <button className="v2-export-btn" onClick={() => downloadJSON(result)}>
+                [Download JSON]
+              </button>
             </div>
 
           </div>
