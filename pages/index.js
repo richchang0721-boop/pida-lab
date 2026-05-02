@@ -81,6 +81,22 @@ export default function Home({ latestPosts }) {
 
       <div className="divider" />
 
+      {/* DEMO BANNER */}
+      <section className="section">
+        <Link href="/demo">
+          <div className="demo-banner">
+            <div className="demo-banner-left">
+              <div className="demo-banner-label">Live Demo</div>
+              <div className="demo-banner-title">Try STME — Structured Decision Explorer</div>
+              <div className="demo-banner-desc">Enter a decision question. STME maps the states, identifies structural pressure, and ranks transitions — without making the decision for you.</div>
+            </div>
+            <div className="demo-banner-cta">Launch Demo →</div>
+          </div>
+        </Link>
+      </section>
+
+      <div className="divider" />
+
       {/* LATEST ARTICLES */}
       <section className="section">
         <div className="section-header">
