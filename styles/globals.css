@@ -874,3 +874,109 @@ nav {
 .v3-cls-irrelevant {
   color: var(--text-dim);
 }
+
+/* ── DEMO V4 — Guided Scenario ── */
+.dot-v4 {
+  background: #34d399;
+  box-shadow: 0 0 0 2px #059669;
+}
+
+/* Mode selector */
+.v4-mode-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 2rem;
+}
+.v4-mode-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.v4-mode-btn {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 0.9rem 1.1rem;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.2s, background 0.2s;
+}
+.v4-mode-btn:hover {
+  border-color: var(--text-muted);
+  background: var(--surface2);
+}
+.v4-mode-active {
+  border-color: var(--accent) !important;
+  background: var(--surface2) !important;
+}
+.v4-mode-title {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.04em;
+}
+.v4-mode-desc {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+/* Scenario selector */
+.v4-scenario-section { margin-bottom: 2rem; }
+.v4-scenario-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 0.75rem;
+}
+.v4-scenario-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 0.7rem 1rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.v4-scenario-btn:hover {
+  border-color: var(--text-muted);
+  color: var(--text);
+  background: var(--surface2);
+}
+.v4-scenario-active {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+  background: var(--surface2) !important;
+}
+.v4-scenario-num {
+  color: var(--text-dim);
+  font-size: 0.7rem;
+  min-width: 1.2rem;
+}
+
+/* Demo mode badge */
+.v4-demo-badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  margin-bottom: 1.5rem;
+}

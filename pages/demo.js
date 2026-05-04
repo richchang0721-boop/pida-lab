@@ -117,6 +117,34 @@ export default function Demo() {
           </div>
         </div>
 
+        {/* V4 */}
+        <div className="demo-version-section">
+          <div className="demo-version-label">
+            <span className="demo-version-dot dot-v4" />
+            V4 卡片
+          </div>
+          <div className="demo-version-card">
+            <div className="demo-index-copy-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="18" height="18">
+                <rect x="9" y="9" width="13" height="13" rx="2"/>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+              </svg>
+            </div>
+            <h3 className="demo-version-card-title">STME V4 — Guided Scenario Demo</h3>
+            <p className="demo-version-card-desc">
+              Choose a scenario, load example conditions, run STME analysis.<br />
+              Supports Demo Mode (no API key) or Full Analysis (with API key).
+            </p>
+            <p className="demo-version-card-best">Best for exploring STME without setup.</p>
+            <Link href="/demo/v4" target="_blank" className="demo-open-btn">
+              [ Open Demo ]
+            </Link>
+            <p className="demo-version-note">
+              This version includes preset scenarios and mock data. No API key required in Demo Mode.
+            </p>
+          </div>
+        </div>
+
         <div className="static-divider" />
         <div className="static-footer-note">
           <span>PIDA Lab</span> · Rethinking AI Systems, Decision &amp; Responsibility
