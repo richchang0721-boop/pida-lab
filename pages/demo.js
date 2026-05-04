@@ -145,6 +145,72 @@ export default function Demo() {
           </div>
         </div>
 
+        {/* V5 */}
+        <div className="demo-version-section">
+          <div className="demo-version-label">
+            <span className="demo-version-dot dot-v5" />
+            V5 卡片
+          </div>
+          <div className="demo-version-card">
+            <div className="demo-index-copy-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="18" height="18">
+                <rect x="9" y="9" width="13" height="13" rx="2"/>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+              </svg>
+            </div>
+            <h3 className="demo-version-card-title">STME V5 — Full Production</h3>
+            <p className="demo-version-card-desc">
+              Complete product architecture. Decision Builder, Condition Engine,<br />
+              upgraded Interpretation, Decision History, and Export / Audit.
+            </p>
+            <p className="demo-version-card-best">Best for full structured decision analysis with history tracking.</p>
+            <Link href="/demo/v5" target="_blank" className="demo-open-btn">
+              [ Open Demo ]
+            </Link>
+            <p className="demo-version-note">
+              This version includes all six product layers. Requires OpenAI API key. Decision history is saved locally in your browser.
+            </p>
+          </div>
+        </div>
+
+
+        <div className="static-divider" />
+
+        {/* Research block */}
+        <div className="demo-research-block">
+          <div className="demo-research-label">Research</div>
+          <div className="demo-research-rows">
+            <div className="demo-research-row">
+              <span className="demo-research-key">SSRN</span>
+              <a
+                className="demo-research-link"
+                href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6548019"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                papers.ssrn.com · abstract_id=6548019
+              </a>
+            </div>
+            <div className="demo-research-row">
+              <span className="demo-research-key">GitHub</span>
+              <a
+                className="demo-research-link"
+                href="https://github.com/richchang0721-boop/STME"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                github.com/richchang0721-boop/STME
+              </a>
+            </div>
+            <div className="demo-research-row">
+              <span className="demo-research-key">Patent</span>
+              <span className="demo-research-val">
+                Provisional Patent Pending (USPTO) · Application No.: 64/045,009
+              </span>
+            </div>
+          </div>
+        </div>
+
         <div className="static-divider" />
         <div className="static-footer-note">
           <span>PIDA Lab</span> · Rethinking AI Systems, Decision &amp; Responsibility
