@@ -89,6 +89,34 @@ export default function Demo() {
           </div>
         </div>
 
+        {/* V3 */}
+        <div className="demo-version-section">
+          <div className="demo-version-label">
+            <span className="demo-version-dot dot-v3" />
+            V3 卡片
+          </div>
+          <div className="demo-version-card">
+            <div className="demo-index-copy-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="18" height="18">
+                <rect x="9" y="9" width="13" height="13" rx="2"/>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+              </svg>
+            </div>
+            <h3 className="demo-version-card-title">STME V3 — Condition-Based Analysis</h3>
+            <p className="demo-version-card-desc">
+              Validates user-provided conditions and maps them into decision constraints.<br />
+              Classifies each condition before generating states and transitions.
+            </p>
+            <p className="demo-version-card-best">Best for decisions with known real-world constraints.</p>
+            <Link href="/demo/v3" target="_blank" className="demo-open-btn">
+              [ Open Demo ]
+            </Link>
+            <p className="demo-version-note">
+              This version models reality through conditions before entering STME analysis.
+            </p>
+          </div>
+        </div>
+
         <div className="static-divider" />
         <div className="static-footer-note">
           <span>PIDA Lab</span> · Rethinking AI Systems, Decision &amp; Responsibility

@@ -748,3 +748,129 @@ nav {
   overflow-x: auto;
   white-space: pre;
 }
+
+/* ── DEMO V2 — Interactive Layer ── */
+
+/* Input Guidance */
+.v2-input-guidance {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1rem 1.4rem;
+  margin-bottom: 1.5rem;
+}
+.v2-guidance-label {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.7rem;
+}
+.v2-guidance-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.v2-guidance-item {
+  background: transparent;
+  border: none;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: left;
+  cursor: pointer;
+  padding: 3px 0;
+  transition: color 0.2s;
+  line-height: 1.6;
+}
+.v2-guidance-item:hover { color: var(--accent); }
+
+/* Error block */
+.v2-error-block {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.v2-error-icon {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--accent2);
+  flex-shrink: 0;
+}
+
+/* Score formula */
+.v2-score-formula {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+/* Interpretation Layer */
+.v2-interpretation {
+  margin-top: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--accent);
+}
+.v2-interpretation-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 1.2rem;
+  border-bottom: 1px solid var(--border);
+}
+.v2-interpretation-label {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.v2-interpretation-body {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  line-height: 1.8;
+  color: var(--text);
+  padding: 1.2rem 1.4rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Result Export */
+.v2-export-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+.v2-export-btn {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+.v2-export-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ── DEMO V3 — Condition-Based ── */
+.dot-v3 {
+  background: #a78bfa;
+  box-shadow: 0 0 0 2px #7c3aed;
+}
+.v3-cls-irrelevant {
+  color: var(--text-dim);
+}
