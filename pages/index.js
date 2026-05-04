@@ -127,6 +127,29 @@ export default function Home({ latestPosts }) {
         </div>
       </section>
 
+      <div className="divider" />
+
+      {/* CONTACT */}
+      <section className="section">
+        <div className="section-header">
+          <span className="section-title">聯絡 · Contact</span>
+          <Link href="/contact" className="section-link">View All →</Link>
+        </div>
+        <div className="contact-index-block">
+          <p className="contact-index-desc">For discussions, collaborations, or research alignment.</p>
+          <div className="contact-index-rows">
+            <div className="contact-index-row">
+              <span className="contact-index-key">Email</span>
+              <a href="mailto:richchang0721@gmail.com" className="contact-index-val">richchang0721@gmail.com</a>
+            </div>
+            <div className="contact-index-row">
+              <span className="contact-index-key">Research</span>
+              <Link href="/contact" className="contact-index-val">→ Contact Page</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </>
   )

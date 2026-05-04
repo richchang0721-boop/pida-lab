@@ -1217,3 +1217,42 @@ nav {
 .demo-research-val {
   color: var(--text-muted);
 }
+
+/* ── Home — Contact block ── */
+.contact-index-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1.2rem 1.4rem;
+}
+.contact-index-desc {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+.contact-index-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.contact-index-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+}
+.contact-index-key {
+  color: var(--text-dim);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  min-width: 4.5rem;
+  flex-shrink: 0;
+}
+.contact-index-val {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contact-index-val:hover { color: var(--accent); }
