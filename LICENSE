@@ -1,0 +1,57 @@
+PIDA-LAB License
+Copyright (c) 2026 PIDA-LAB. All rights reserved.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PART I — WRITTEN CONTENT (All Rights Reserved)
+
+The following are protected and may NOT be reproduced, distributed,
+modified, or used in any form without prior written permission:
+
+  - All articles and posts published on www.pida-lab.com
+  - The STME (Structured Multi-State Transition & Evaluation) framework,
+    including its methodology, schema, terminology, and system design
+  - All research content associated with SSRN abstract_id=6548019
+  - Any content related to USPTO Provisional Patent Application No. 64/045,009
+
+Commercial use, derivative works, or redistribution of the above
+without explicit written consent from PIDA-LAB is strictly prohibited.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PART II — CODE STRUCTURE (Reference Only)
+
+The source code in this repository (Next.js pages, components, styles,
+and configuration files) is made available for reference and learning
+purposes under the following conditions:
+
+  Permission is granted to:
+  - Read and study the code structure
+  - Use general patterns as reference for your own original projects
+
+  Permission is NOT granted to:
+  - Copy, reproduce, or deploy this codebase or substantial portions of it
+    as your own project without significant modification
+  - Use this code in any product that replicates or competes with
+    PIDA-LAB or the STME framework
+  - Remove or alter this license notice
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PART III — PATENT NOTICE
+
+The STME framework is the subject of a Provisional Patent Application
+filed with the United States Patent and Trademark Office (USPTO).
+
+  Application No.: 64/045,009
+  Status: Provisional Patent Pending
+
+Unauthorized implementation of the STME framework in commercial
+products or services may constitute patent infringement.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+For permissions, licensing inquiries, or research collaboration:
+
+  richchang0721@gmail.com
+  https://www.pida-lab.com/contact
