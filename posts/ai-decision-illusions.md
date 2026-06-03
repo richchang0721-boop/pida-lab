@@ -18,9 +18,9 @@ This page will map the core illusions behind AI-assisted decision systems.
 
 ## Series
 
-[#1 — The Illusion of Rational AI Decisions](/posts/ai-decision-illusions/ai-decision-illusions-1.md)
+[#1 — The Illusion of Rational AI Decisions](/posts/ai-decision-illusions/ai-decision-illusions-1)
 
-[#2 — The Illusion of Objective Outputs](/posts/ai-decision-illusions/ai-decision-illusions-2.md)
+[#2 — The Illusion of Objective Outputs](/posts/ai-decision-illusions/ai-decision-illusions-2)
 
 \#3 — Coming Soon
 
