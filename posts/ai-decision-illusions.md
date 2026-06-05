@@ -22,7 +22,7 @@ This page will map the core illusions behind AI-assisted decision systems.
 
 [#2 — The Illusion of Objective Outputs](/posts/ai-decision-illusions-2)
 
-\#3 — Coming Soon
+[#3 — The Illusion of Safe Optimization](/posts/ai-decision-illusions-3)
 
 \#4 — Coming Soon
 
