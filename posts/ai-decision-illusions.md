@@ -24,7 +24,7 @@ This page will map the core illusions behind AI-assisted decision systems.
 
 [#3 — The Illusion of Safe Optimization](/posts/ai-decision-illusions-3)
 
-\#4 — Coming Soon
+[#4 — The Illusion of Traceable Decisions](/posts/ai-decision-illusions-4)
 
 \#5 — Coming Soon
 
