@@ -1256,3 +1256,270 @@ nav {
   transition: color 0.2s;
 }
 .contact-index-val:hover { color: var(--accent); }
+/* ── PIDA ARCHITECTURE COMPONENT ── */
+.pida-arch {
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.pida-arch-header {
+  padding: 1.5rem 1.5rem 1.2rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.pida-arch-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pida-arch-eyebrow::before {
+  content: '';
+  width: 16px;
+  height: 1px;
+  background: var(--accent);
+  display: block;
+}
+
+.pida-arch-title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.pida-arch-sub {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  margin-top: 3px;
+  letter-spacing: .04em;
+}
+
+.pida-arch-eq {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  margin-top: 10px;
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  letter-spacing: .05em;
+  line-height: 1.6;
+}
+.pida-arch-eq span {
+  color: var(--text-muted);
+}
+
+.pida-layers {
+  background: var(--surface);
+}
+
+.pida-layer {
+  border-left: 3px solid var(--layer-color, var(--border));
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  transition: background .15s;
+}
+.pida-layer[open],
+.pida-layer:hover {
+  background: var(--surface);
+}
+
+.pida-layer-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+.pida-layer-header::-webkit-details-marker { display: none; }
+
+.pida-layer-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.pida-layer-code {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: .12em;
+  color: var(--text-dim);
+  min-width: 22px;
+}
+
+.pida-layer-name {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: .04em;
+  flex: 1;
+}
+
+.pida-layer-tag {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  padding: 2px 6px;
+  flex-shrink: 0;
+  display: none;
+}
+@media(min-width: 600px) {
+  .pida-layer-tag { display: block; }
+}
+
+.pida-layer-chevron {
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  transition: transform .2s, color .2s;
+  flex-shrink: 0;
+}
+.pida-layer[open] .pida-layer-chevron {
+  transform: rotate(90deg);
+  color: var(--text-muted);
+}
+
+.pida-layer-body {
+  padding: 0 16px 14px 38px;
+}
+
+.pida-layer-desc {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+  margin-bottom: 12px;
+  border-left: 2px solid var(--border);
+  padding-left: 10px;
+}
+
+.pida-modules {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.pida-module {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 3px 7px;
+  border: 1px solid;
+}
+
+.pida-flow-states {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 3px;
+  margin-bottom: 10px;
+}
+
+.pida-flow-state {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 6px 8px;
+  line-height: 1.6;
+}
+
+.pida-flow-active {
+  border-color: #f9731640;
+  background: rgba(249,115,22,.05);
+}
+
+.pida-flow-num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.pida-principle {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  font-style: italic;
+  letter-spacing: .04em;
+  line-height: 1.7;
+}
+
+.pida-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 2px 0;
+  background: var(--surface);
+}
+
+.pida-conn-line {
+  width: 1px;
+  height: 10px;
+  background: var(--border);
+}
+
+.pida-conn-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.pida-arch-footer {
+  padding: 12px 16px;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pida-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pida-leg-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.pida-leg-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.pida-hint {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
