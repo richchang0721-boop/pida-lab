@@ -22,7 +22,7 @@ export default function About() {
 
         <div className="static-section">
           <h2>Who is behind this</h2>
-          <p>Mao Lin Chang is an independent AI researcher based in Cambodia, operating under pida-lab.com. Background in IT management with substantial hardware engineering experience. Research is conducted as a side project alongside a full-time day job, limiting available hours to evenings.</p>
+          <p>Rich Chang is an independent AI researcher based in Cambodia, operating under pida-lab.com. Background in IT management with substantial hardware engineering experience. Research is conducted as a side project alongside a full-time day job, limiting available hours to evenings.</p>
           <p>This work is intentionally counter-mainstream: not built around commercialization, rapid deployment, or scalability. The deeper research question is what happens to people who interact long-term with an entity that never refuses or resists — and what structural safeguards should exist before that interaction becomes the norm.</p>
         </div>
 
@@ -41,7 +41,7 @@ export default function About() {
 
         <div className="static-section">
           <h2>Published research</h2>
-          <p>All frameworks are independently published with verifiable citations:</p>
+          <p>All published frameworks carry verifiable citations:</p>
           <div className="about-pubs">
             <div className="about-pub-row">
               <span className="about-pub-key">USPTO</span>
@@ -53,15 +53,23 @@ export default function About() {
             </div>
             <div className="about-pub-row">
               <span className="about-pub-key">SSRN</span>
-              <span className="about-pub-val">CIP (Cognitive Integrity Protocol) · Published · Cited by Argentine professor</span>
+              <span className="about-pub-val">CIP — Cognitive Integrity Protocol: The Red Lines for Brain-Computer Interfaces · Posted 13 Apr 2026 · Cited by Argentine professor</span>
             </div>
             <div className="about-pub-row">
               <span className="about-pub-key">SSRN</span>
-              <span className="about-pub-val">OSD (Observable Semantic Dynamics) · Submitted</span>
+              <span className="about-pub-val">PIDA — A Pre-Incident Responsibility Architecture for Developmental, Role-Playing, and Embodied AI Systems · Posted 13 Jan 2026</span>
             </div>
             <div className="about-pub-row">
               <span className="about-pub-key">SSRN</span>
-              <span className="about-pub-val">STME (Structured Multi-State Transition & Evaluation) · abstract_id=6548019</span>
+              <span className="about-pub-val">STME — A Structured Multi-State Transition Framework for AI Cognitive Systems · Posted 29 Apr 2026</span>
+            </div>
+            <div className="about-pub-row">
+              <span className="about-pub-key">SSRN</span>
+              <span className="about-pub-val">PSP — Persona Sovereignty Protocol for Long-Horizon AI Systems · Posted 09 May 2026</span>
+            </div>
+            <div className="about-pub-row">
+              <span className="about-pub-key">In progress</span>
+              <span className="about-pub-val">OSD (Observable Semantic Dynamics) · Under development</span>
             </div>
           </div>
         </div>
