@@ -36,11 +36,24 @@ STME is a decision framework developed at PIDA-LAB. It decomposes decision probl
 
 ---
 
+## Research Frameworks
+
+| Framework | Full Name | Status |
+|-----------|-----------|--------|
+| PIDA | Primordial Indeterminate Developmental AI | USPTO Provisional Patent Filed |
+| STME | Structured Multi-State Transition & Evaluation | SSRN Published · Patent Pending |
+| RSTA | Recursive State Transition Architecture | Zenodo Published (DOI) |
+| OSD | Observable Semantic Dynamics | SSRN Submitted |
+| CIP | Cognitive Integrity Protocol | SSRN Published |
+| FCFA | Foundational Cognitive Formation Architecture | Draft in Progress |
+
+---
+
 ## Tech Stack
 
 | Layer | Tool |
 |-------|------|
-| Framework | Next.js |
+| Framework | Next.js 13 |
 | Hosting | Vercel |
 | Source Control | GitHub |
 | Content | Markdown (`.md`) |
@@ -92,6 +105,8 @@ excerpt: 'A short description of the article.'
 
 Article content starts here...
 ```
+
+Available categories: `decision`, `responsibility`, `system`, `relationship`
 
 Once committed to `main`, Vercel automatically deploys. The sitemap updates automatically.
 
