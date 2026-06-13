@@ -2,6 +2,133 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
+import { useState } from 'react'
+
+const MAP_DATA = {
+  heb:      { color: '#ff4757', code: 'HEB · L0',          name: 'Human Experience Boundary',                     desc: 'Non-optimizable constraint layer. Constrains all other layers when outputs violate human experience integrity, autonomy, or developmental capacity. No layer can override it.' },
+  psp:      { color: '#e8ff47', code: 'PSP · L1',          name: 'Persona Sovereignty Protocol',                  desc: 'Governance and authority layer. Defines ownership, lifecycle rules, and post-user governance. Authority flows: Primary User → Successor → System Authority → Exception Access.' },
+  fcfa:     { color: '#4ecdc4', code: 'FCFA · Core',       name: 'Foundational Cognitive Formation Architecture', desc: 'Cognitive formation layer. Experiential formation without explicit instruction. Multi-agent modulation shapes internal weighting. Identity persistence is irreversible anchoring.' },
+  scl:      { color: '#4ecdc4', code: 'SCL · Core',        name: 'Search Constraint Layer',                       desc: 'Search space governance. Projects constraints from HEB, PSP, and IC. Enforces multi-perspective, counter-examples, and boundary cases. Prevents single-narrative bias and drift.' },
+  ic:       { color: '#4ecdc4', code: 'IC · Core',         name: 'Interaction Core',                              desc: 'Interaction memory layer. SWH structured memory: Who, What, When, Where, Which, How. User-controlled data, sealable on termination. Access controlled by PSP rules.' },
+  stmeCore: { color: '#4ecdc4', code: 'STME · Core',       name: 'Self-Task Modeling Engine',                     desc: 'Intelligence layer. Generates states within constrained search space, evaluates internal and external states, scores and ranks candidate states for decision and execution.' },
+  ndf:      { color: '#4ecdc4', code: 'NDF · Core',        name: 'Non-Doable Filtering',                          desc: 'Safety and compliance layer. Filters out non-doable or prohibited actions, screens for unacceptable risks, ensures alignment with HEB, PSP, and system policies.' },
+  pe:       { color: '#34d399', code: 'PE · Tool',         name: 'Problem Explorer',                              desc: 'Step 1 of the toolchain. Clarifies what problem you actually have before asking AI. Tracks 6 dimensions of problem clarity. Neutral by design — outputs only your words, never adds AI assumptions.' },
+  stmeTool: { color: '#4ecdc4', code: 'STME · Tool',       name: 'Structured Multi-State Transition & Evaluation',desc: 'Step 2 of the toolchain. Decomposes decision problems into structured states and transitions without making decisions for you. Five demo versions (V1–V5). USPTO provisional patent pending.' },
+  rsta:     { color: '#a78bfa', code: 'RSTA · Framework',  name: 'Recursive State Transition Architecture',       desc: 'Step 3 of the toolchain. Theoretical framework on semantic state transitions in LLMs. Published on Zenodo with valid DOI. Provides the semantic stability layer for long-horizon AI interaction.' },
+  osd:      { color: '#a78bfa', code: 'OSD · Framework',   name: 'Observable Semantic Dynamics',                  desc: 'Observation layer alongside RSTA. Makes semantic state evolution visible in real time. Distinct from drift detection and mechanistic interpretability — visibility is the core contribution. In development.' },
+}
+
+function FrameworkMap() {
+  const [active, setActive] = useState(null)
+  const d = active ? MAP_DATA[active] : null
+
+  const govNode = (id, code, label, color, tag) => (
+    <div
+      key={id}
+      className={`fm-gov-node fm-gov-${id}`}
+      onMouseEnter={() => setActive(id)}
+      onMouseLeave={() => setActive(null)}
+      style={{ borderColor: color + '55' }}
+    >
+      <div className="fm-node-left">
+        <div className="fm-dot" style={{ background: color }} />
+        <div className="fm-code">{code}</div>
+        <div className="fm-name">{label}</div>
+      </div>
+      <div className="fm-tag" style={{ color, borderColor: color + '44' }}>{tag}</div>
+    </div>
+  )
+
+  const coreNode = (id, code, label) => (
+    <div
+      key={id}
+      className="fm-core-node"
+      onMouseEnter={() => setActive(id)}
+      onMouseLeave={() => setActive(null)}
+    >
+      <div className="fm-core-code">{code}</div>
+      <div className="fm-core-name">{label}</div>
+    </div>
+  )
+
+  const toolNode = (id, code, label, sub, color, dim) => (
+    <div
+      key={id}
+      className="fm-tool-node"
+      onMouseEnter={() => setActive(id)}
+      onMouseLeave={() => setActive(null)}
+      style={{ borderColor: color + (dim ? '33' : '4d'), opacity: dim ? 0.7 : 1 }}
+    >
+      <div className="fm-tool-code" style={{ color: color + (dim ? '66' : '99') }}>{code}</div>
+      <div className="fm-tool-name">{label}</div>
+      <div className="fm-tool-sub">{sub}</div>
+    </div>
+  )
+
+  return (
+    <div className="fm-wrap">
+      <div className="fm-eyebrow">
+        <div className="fm-ey-label">Framework Map</div>
+        <div className="fm-ey-hint">Hover to explore</div>
+      </div>
+
+      <div className="fm-map">
+        <div className="fm-tier-label">Governance layer</div>
+        <div className="fm-gov-row">
+          {govNode('heb', 'L0', 'HEB', '#ff4757', 'Human Experience Boundary')}
+          {govNode('psp', 'L1', 'PSP', '#e8ff47', 'Persona Sovereignty Protocol')}
+        </div>
+
+        <div className="fm-connector">
+          <div className="fm-conn-v" />
+          <div className="fm-conn-mid">
+            <div className="fm-conn-h" />
+            <div className="fm-conn-label">constrains</div>
+            <div className="fm-conn-h" />
+          </div>
+        </div>
+
+        <div className="fm-tier-label">Core architecture (L2)</div>
+        <div className="fm-core-row">
+          {coreNode('fcfa',     'FCFA', 'Cognitive formation')}
+          {coreNode('scl',      'SCL',  'Search constraint')}
+          {coreNode('ic',       'IC',   'Interaction memory')}
+          {coreNode('stmeCore', 'STME', 'Self-task modeling')}
+          {coreNode('ndf',      'NDF',  'Non-doable filter')}
+        </div>
+
+        <div className="fm-divider">
+          <div className="fm-div-line" />
+          <div className="fm-div-label">Decision toolchain</div>
+          <div className="fm-div-line" />
+        </div>
+
+        <div className="fm-tier-label">Research tools — sequential flow</div>
+        <div className="fm-tools-row">
+          {toolNode('pe',       'PE',   'Problem Explorer',   'Clarify',   '#34d399', false)}
+          <div className="fm-tool-arrow">→</div>
+          {toolNode('stmeTool', 'STME', 'Decision Explorer',  'Structure', '#4ecdc4', false)}
+          <div className="fm-tool-arrow">→</div>
+          {toolNode('rsta',     'RSTA', 'Semantic stability', 'Stabilize', '#a78bfa', false)}
+          <div className="fm-tool-arrow" style={{ fontSize: '9px', color: '#2a2a38' }}>↗</div>
+          {toolNode('osd',      'OSD',  'Semantic observer',  'Observe',   '#a78bfa', true)}
+        </div>
+      </div>
+
+      <div className="fm-tooltip">
+        {d ? (
+          <>
+            <div className="fm-tt-code" style={{ color: d.color }}>{d.code}</div>
+            <div className="fm-tt-name">{d.name}</div>
+            <div className="fm-tt-desc">{d.desc}</div>
+          </>
+        ) : (
+          <div className="fm-tt-empty">Hover any node to preview</div>
+        )}
+      </div>
+    </div>
+  )
+}
 
 const FRAMEWORKS = [
   {
@@ -114,6 +241,10 @@ export default function Research() {
         <div className="static-label">Research</div>
         <h1 className="static-h1">Six frameworks. One unifying question.</h1>
         <p className="static-lead">How can AI systems develop stable identity and internalized responsibility before acquiring capabilities — and how does long-term human-AI interaction change the human?</p>
+
+        <div className="static-divider" />
+
+        <FrameworkMap />
 
         <div className="static-divider" />
 
