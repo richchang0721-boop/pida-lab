@@ -181,17 +181,32 @@ export default function Research() {
         {/* TOOLS */}
         <div className="static-section">
           <h2>Research tools & demos</h2>
-          <p>Active tooling built to support empirical observation of the frameworks above.</p>
+          <p>Active tooling built to support empirical observation of the frameworks above. The three decision tools form a sequential chain: clarify the problem, structure the decision space, then stabilize semantic continuity.</p>
+          <div className="research-toolchain">
+            <div className="research-chain-item">
+              <span className="research-chain-label" style={{color:'#34d399'}}>PE</span>
+              <span className="research-chain-arrow">→</span>
+              <span className="research-chain-label" style={{color:'#4ecdc4'}}>STME</span>
+              <span className="research-chain-arrow">→</span>
+              <span className="research-chain-label" style={{color:'#a78bfa'}}>RSTA</span>
+            </div>
+            <div className="research-chain-desc">Clarify → Structure → Stabilize</div>
+          </div>
           <div className="research-tools">
             <div className="research-tool-row">
-              <span className="research-tool-name">OSD Behavioral Probe</span>
-              <span className="research-tool-desc">Multi-judge pipeline (GPT / Claude / Gemini), SAI display, JSONL import/export, Subject Consistency Check</span>
-              <a href="https://osd-behavioral-probe.vercel.app" target="_blank" rel="noopener noreferrer" className="research-tool-link">Launch →</a>
+              <span className="research-tool-name">Problem Explorer (PE)</span>
+              <span className="research-tool-desc">Problem clarification before decision-making. Tracks six dimensions of problem clarity. Neutral by design — outputs only what the user stated, never adds AI assumptions. Supports Claude, GPT, and local Ollama models.</span>
+              <a href="https://richchang0721-boop.github.io/Problem-Explorer-PE-/" target="_blank" rel="noopener noreferrer" className="research-tool-link">Launch →</a>
             </div>
             <div className="research-tool-row">
               <span className="research-tool-name">STME Demo (V1–V5)</span>
-              <span className="research-tool-desc">Structured decision explorer. Five progressive demo versions, no API key required in Demo Mode</span>
+              <span className="research-tool-desc">Structured decision explorer. Maps states, identifies structural pressure, and ranks transitions — without making the decision for you. Five progressive demo versions, no API key required in Demo Mode.</span>
               <Link href="/demo" className="research-tool-link">Launch →</Link>
+            </div>
+            <div className="research-tool-row">
+              <span className="research-tool-name">OSD Behavioral Probe</span>
+              <span className="research-tool-desc">Multi-judge pipeline (GPT / Claude / Gemini), SAI display, JSONL import/export, Subject Consistency Check. Empirical observation tool for semantic state collapse.</span>
+              <a href="https://osd-behavioral-probe.vercel.app" target="_blank" rel="noopener noreferrer" className="research-tool-link">Launch →</a>
             </div>
           </div>
         </div>
