@@ -16,9 +16,9 @@ The site is built with Next.js, deployed on Vercel, and connected to GitHub for 
 
 ---
 
-## STME — Structured Multi-State Transition & Evaluation
+## STME — Structured Multi-State Transition
 
-STME is a decision framework developed at PIDA-LAB. It decomposes decision problems into structured states and transitions without making decisions for the user.
+STME is a decision framework developed at PIDA-LAB. It decomposes decision problems into structured states and transitions without making decisions for the user, preventing premature collapse of the decision space.
 
 **Research:**
 - **SSRN Paper:** [papers.ssrn.com · abstract_id=6548019](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6548019)
@@ -41,11 +41,14 @@ STME is a decision framework developed at PIDA-LAB. It decomposes decision probl
 | Framework | Full Name | Status |
 |-----------|-----------|--------|
 | PIDA | Primordial Indeterminate Developmental AI | USPTO Provisional Patent Filed |
-| STME | Structured Multi-State Transition & Evaluation | SSRN Published · Patent Pending |
+| STME | Structured Multi-State Transition | SSRN Published · Patent Pending |
 | RSTA | Recursive State Transition Architecture | Zenodo Published (DOI) |
-| OSD | Observable Semantic Dynamics | SSRN Submitted |
+| OSD | Observable Semantic Dynamics | SSRN Under Review |
 | CIP | Cognitive Integrity Protocol | SSRN Published |
+| NDF | Non-Dominant Interaction Framework | SSRN Rejected · Considering Zenodo |
 | FCFA | Foundational Cognitive Formation Architecture | Draft in Progress |
+
+> FCFA is the cognitive formation core of PIDA, comprising IC (Interaction Core), IMC (Irreversible Memory Complex), and QPE (Qualia & PersEvo Engine).
 
 ---
 
@@ -70,9 +73,10 @@ pida-lab/
 ├── lib/               # posts.server.js, categories.js
 ├── pages/
 │   ├── demo/          # v1.js, v2.js, v3.js, v4.js, v5.js
-│   ├── posts/         # [id].js — dynamic post rendering
+│   ├── posts/         # [...id].js — dynamic post rendering
 │   ├── categories/    # category pages
 │   ├── index.js       # Home
+│   ├── research.js    # Research frameworks
 │   ├── about.js
 │   ├── contact.js
 │   ├── privacy.js
