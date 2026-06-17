@@ -42,24 +42,13 @@ function PidaArchitecture() {
       tag: 'Architecture Layer',
       color: '#4ecdc4',
       borderColor: '#4ecdc4',
-      desc: 'Five integrated subsystems operating under PSP governance. Each subsystem is constrained by HEB and governed by PSP rules before execution.',
-      modules: ['FCFA — Cognitive formation', 'SCL — Search constraint', 'IC — Interaction memory', 'STME — Self-task modeling', 'NDF — Non-doable filtering'],
-      principle: 'Development sandbox: experiential formation without explicit instruction. Identity persistence is irreversible anchoring and continuity.',
-    },
-    {
-      id: 'qpe',
-      code: 'L3',
-      name: 'QPE — Qualia & PersEvo Engine',
-      tag: 'Evolution Layer',
-      color: '#a78bfa',
-      borderColor: '#a78bfa',
-      desc: 'Cross-layer support system. Generates internal subjective experience representations. Evolves persona across time and interactions. Bridges qualia, evolution, and memory layers.',
-      modules: ['Qualia generation', 'PersEvo evolution', 'Memory integration', 'Continuity & coherence'],
-      principle: 'Maintain identity and behavioral consistency across time. Bridge the gap between single-session interaction and persistent personhood.',
+      desc: 'Four integrated subsystems operating under PSP governance. Each subsystem is constrained by HEB and governed by PSP rules before execution.',
+      modules: ['FCFA — Cognitive formation (incl. IC + IMC + QPE)', 'SCL — Search constraint', 'STME — Structured Multi-State Transition', 'NDF — Non-Dominant Interaction Framework'],
+      principle: 'FCFA provides experiential formation without explicit instruction, with irreversible identity anchoring. STME prevents premature decision collapse; NDF governs long-horizon interaction.',
     },
     {
       id: 'flow',
-      code: 'L4',
+      code: 'L3',
       name: 'Lifecycle Flow — Governed by PSP',
       tag: 'State Machine',
       color: '#f97316',
@@ -78,7 +67,7 @@ function PidaArchitecture() {
         <div className="pida-arch-title">Persona-Integrated Dual-layer Architecture</div>
         <div className="pida-arch-sub">Sovereignty and Evolution of AI-associated Entities</div>
         <div className="pida-arch-eq">
-          <span>PIDA =</span> Governance (PSP) + Structure (FCFA/STME/NDF/SCL) + Intelligence (QPE) <span>under</span> HEB
+          <span>PIDA =</span> Governance (PSP) + Structure (FCFA/SCL/STME/NDF) <span>under</span> HEB
         </div>
       </div>
 
@@ -138,7 +127,6 @@ function PidaArchitecture() {
             { color: '#ff4757', label: 'HEB' },
             { color: '#e8ff47', label: 'PSP' },
             { color: '#4ecdc4', label: 'Core' },
-            { color: '#a78bfa', label: 'QPE' },
             { color: '#f97316', label: 'Lifecycle' },
           ].map(l => (
             <div key={l.label} className="pida-leg-item">
@@ -192,8 +180,8 @@ export default function Home({ latestPosts }) {
             <span className="hero-stat-label">Core categories</span>
           </div>
           <div>
-            <span className="hero-stat-num">0%</span>
-            <span className="hero-stat-label">Filler content</span>
+            <span className="hero-stat-num">6</span>
+            <span className="hero-stat-label">Research frameworks</span>
           </div>
         </div>
       </section>

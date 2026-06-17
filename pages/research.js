@@ -7,15 +7,14 @@ import { useState } from 'react'
 const MAP_DATA = {
   heb:      { color: '#ff4757', code: 'HEB · L0',          name: 'Human Experience Boundary',                     desc: 'Non-optimizable constraint layer. Constrains all other layers when outputs violate human experience integrity, autonomy, or developmental capacity. No layer can override it.' },
   psp:      { color: '#e8ff47', code: 'PSP · L1',          name: 'Persona Sovereignty Protocol',                  desc: 'Governance and authority layer. Defines ownership, lifecycle rules, and post-user governance. Authority flows: Primary User → Successor → System Authority → Exception Access.' },
-  fcfa:     { color: '#4ecdc4', code: 'FCFA · Core',       name: 'Foundational Cognitive Formation Architecture', desc: 'Cognitive formation layer. Experiential formation without explicit instruction. Multi-agent modulation shapes internal weighting. Identity persistence is irreversible anchoring.' },
-  scl:      { color: '#4ecdc4', code: 'SCL · Core',        name: 'Search Constraint Layer',                       desc: 'Search space governance. Projects constraints from HEB, PSP, and IC. Enforces multi-perspective, counter-examples, and boundary cases. Prevents single-narrative bias and drift.' },
-  ic:       { color: '#4ecdc4', code: 'IC · Core',         name: 'Interaction Core',                              desc: 'Interaction memory layer. SWH structured memory: Who, What, When, Where, Which, How. User-controlled data, sealable on termination. Access controlled by PSP rules.' },
-  stmeCore: { color: '#4ecdc4', code: 'STME · Core',       name: 'Self-Task Modeling Engine',                     desc: 'Intelligence layer. Generates states within constrained search space, evaluates internal and external states, scores and ranks candidate states for decision and execution.' },
-  ndf:      { color: '#4ecdc4', code: 'NDF · Core',        name: 'Non-Doable Filtering',                          desc: 'Safety and compliance layer. Filters out non-doable or prohibited actions, screens for unacceptable risks, ensures alignment with HEB, PSP, and system policies.' },
+  fcfa:     { color: '#4ecdc4', code: 'FCFA · Core',       name: 'Foundational Cognitive Formation Architecture', desc: 'Cognitive formation layer. Comprises IC (Interaction Core), IMC (Irreversible Memory Complex), and QPE (Qualia & PersEvo Engine). Experiential formation without explicit instruction; identity persistence is irreversible anchoring.' },
+  scl:      { color: '#4ecdc4', code: 'SCL · Core',        name: 'Search Constraint Layer',                       desc: 'Search space governance. Projects constraints from HEB, PSP, and FCFA. Enforces multi-perspective, counter-examples, and boundary cases. Prevents single-narrative bias and drift.' },
+  stmeCore: { color: '#4ecdc4', code: 'STME · Core',       name: 'Structured Multi-State Transition',             desc: 'Decision-state framework. Maintains multiple concurrent decision states and evolves them through a transition grammar — preventing premature collapse of the decision space.' },
+  ndf:      { color: '#4ecdc4', code: 'NDF · Core',        name: 'Non-Dominant Interaction Framework',            desc: 'Long-horizon interaction governance. Treats dependency, behavioral convergence, and disengagement erosion as cumulative interaction-state conditions, enforced before output. Source of the HEB concept.' },
   pe:       { color: '#34d399', code: 'PE · Tool',         name: 'Problem Explorer',                              desc: 'Step 1 of the toolchain. Clarifies what problem you actually have before asking AI. Tracks 6 dimensions of problem clarity. Neutral by design — outputs only your words, never adds AI assumptions.' },
-  stmeTool: { color: '#4ecdc4', code: 'STME · Tool',       name: 'Structured Multi-State Transition & Evaluation',desc: 'Step 2 of the toolchain. Decomposes decision problems into structured states and transitions without making decisions for you. Five demo versions (V1–V5). USPTO provisional patent pending.' },
+  stmeTool: { color: '#4ecdc4', code: 'STME · Tool',       name: 'Structured Multi-State Transition',             desc: 'Step 2 of the toolchain. Decomposes decision problems into structured states and transitions without making decisions for you. Five demo versions (V1–V5). USPTO provisional patent pending.' },
   rsta:     { color: '#a78bfa', code: 'RSTA · Framework',  name: 'Recursive State Transition Architecture',       desc: 'Step 3 of the toolchain. Theoretical framework on semantic state transitions in LLMs. Published on Zenodo with valid DOI. Provides the semantic stability layer for long-horizon AI interaction.' },
-  osd:      { color: '#a78bfa', code: 'OSD · Framework',   name: 'Observable Semantic Dynamics',                  desc: 'Observation layer alongside RSTA. Makes semantic state evolution visible in real time. Distinct from drift detection and mechanistic interpretability — visibility is the core contribution. In development.' },
+  osd:      { color: '#a78bfa', code: 'OSD · Framework',   name: 'Observable Semantic Dynamics',                  desc: 'Observation layer alongside RSTA. Makes semantic state evolution visible in real time. Distinct from drift detection and mechanistic interpretability — visibility is the core contribution. SSRN under review.' },
 }
 
 function FrameworkMap() {
@@ -92,9 +91,8 @@ function FrameworkMap() {
         <div className="fm-core-row">
           {coreNode('fcfa',     'FCFA', 'Cognitive formation')}
           {coreNode('scl',      'SCL',  'Search constraint')}
-          {coreNode('ic',       'IC',   'Interaction memory')}
-          {coreNode('stmeCore', 'STME', 'Self-task modeling')}
-          {coreNode('ndf',      'NDF',  'Non-doable filter')}
+          {coreNode('stmeCore', 'STME', 'Multi-state transition')}
+          {coreNode('ndf',      'NDF',  'Non-dominant interaction')}
         </div>
 
         <div className="fm-divider">
@@ -138,8 +136,8 @@ const FRAMEWORKS = [
     color: '#e8ff47',
     status: 'Patent Pending',
     statusType: 'patent',
-    question: 'How does AI personality form through environmental exposure rather than direct instruction — and what does long-term interaction with a fully compliant entity do to the human?',
-    contribution: 'Flagship framework. Proposes that stable AI identity must be established before capability acquisition, not after. Holds a mirror to human behavior in AI interaction.',
+    question: 'How does AI personality form through environmental exposure rather than direct instruction — and how can that formation remain stable without collapsing over long-horizon interaction?',
+    contribution: 'Flagship governance architecture. Proposes that stable AI identity must be established before capability acquisition, not after. Long-horizon human-AI interaction is the observation window for whether that identity holds.',
     links: [
       { label: 'USPTO · No. 64/045,009', href: null },
     ],
@@ -162,8 +160,8 @@ const FRAMEWORKS = [
     code: 'OSD',
     name: 'Observable Semantic Dynamics',
     color: '#a78bfa',
-    status: 'In Development',
-    statusType: 'draft',
+    status: 'SSRN · Under Review',
+    statusType: 'submitted',
     question: 'Can semantic state evolution in LLMs be made visible — not just predicted, but observed in real time?',
     contribution: 'Framework for making high-level semantic emergence visible. Visibility is the core contribution; prediction is a potential bonus. Distinct from drift detection, intent tracking, and mechanistic interpretability.',
     links: [
@@ -179,7 +177,7 @@ const FRAMEWORKS = [
     status: 'Published · SSRN',
     statusType: 'published',
     question: 'How should AI systems maintain cognitive integrity under adversarial or manipulative interaction — and what structural protocol enforces it?',
-    contribution: 'Published on SSRN. Cited by an Argentine professor. Defines the structural conditions under which AI cognitive integrity can be verified and maintained.',
+    contribution: 'Published on SSRN. Cited by an Argentine professor. Defines five non-negotiable red lines for brain-computer interfaces and the structural conditions under which cognitive integrity can be verified and maintained.',
     links: [
       { label: 'SSRN · Published', href: 'https://ssrn.com' },
     ],
@@ -192,23 +190,34 @@ const FRAMEWORKS = [
     status: 'Draft 0.2',
     statusType: 'draft',
     question: 'When AI causes harm but no structural actor bears accountability, who is responsible — and how do we design governance structures that prevent this collapse?',
-    contribution: 'Incorporates the "Responsibility Collapse" concept: the governance vacuum where AI causes harm but no structural actor bears accountability. Paper at Draft 0.2.',
+    contribution: 'The cognitive formation core of PIDA, comprising IC, IMC, and QPE. Incorporates the "Responsibility Collapse" concept: the governance vacuum where AI causes harm but no structural actor bears accountability. Paper at Draft 0.2.',
     links: [],
   },
   {
     id: 'stme',
     code: 'STME',
-    name: 'Structured Multi-State Transition & Evaluation',
+    name: 'Structured Multi-State Transition',
     color: '#34d399',
     status: 'Published · SSRN',
     statusType: 'published',
     question: 'How can decision problems be decomposed into structured states and transitions — without the system making the decision for the user?',
-    contribution: 'Decision framework that maps states, identifies structural pressure, and ranks transitions. Five demo versions available. USPTO provisional patent pending.',
+    contribution: 'Decision framework that maps states, identifies structural pressure, and ranks transitions while preventing premature collapse of the decision space. Five demo versions available. USPTO provisional patent pending.',
     links: [
       { label: 'SSRN · abstract_id=6548019', href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6548019' },
       { label: 'GitHub · STME', href: 'https://github.com/richchang0721-boop/STME' },
       { label: 'Live Demo', href: '/demo' },
     ],
+  },
+  {
+    id: 'ndf',
+    code: 'NDF',
+    name: 'Non-Dominant Interaction Framework',
+    color: '#4ecdc4',
+    status: 'SSRN Rejected · Considering Zenodo',
+    statusType: 'draft',
+    question: 'How do we govern cumulative interaction effects — dependency, behavioral convergence, disengagement erosion — that emerge across long-horizon interaction rather than in any single output?',
+    contribution: 'Long-horizon interaction governance via pre-execution constraints. Introduces the Human Experience Boundary (HEB): domains of human experience that must not be compressed, replaced, simulated, or eliminated through optimization-driven AI.',
+    links: [],
   },
 ]
 
@@ -225,6 +234,7 @@ const RELATIONS = [
   { from: 'OSD',  to: 'RSTA', label: 'Empirical evidence → Theory validation' },
   { from: 'CIP',  to: 'PIDA', label: 'Integrity protocol → Identity design' },
   { from: 'STME', to: 'RSTA', label: 'Decision states → Semantic states' },
+  { from: 'NDF',  to: 'HEB',  label: 'Interaction governance → Boundary concept' },
 ]
 
 export default function Research() {
@@ -232,15 +242,15 @@ export default function Research() {
     <>
       <Head>
         <title>Research — PIDA-LAB</title>
-        <meta name="description" content="Six interconnected frameworks exploring AI identity formation, semantic stability, decision responsibility, and governance architecture." />
+        <meta name="description" content="Interconnected frameworks exploring AI identity formation, semantic stability, decision responsibility, and governance architecture." />
       </Head>
       <Nav />
       <div className="static-page research-page">
         <Link href="/" className="back-link">← Home</Link>
 
         <div className="static-label">Research</div>
-        <h1 className="static-h1">Six frameworks. One unifying question.</h1>
-        <p className="static-lead">How can AI systems develop stable identity and internalized responsibility before acquiring capabilities — and how does long-term human-AI interaction change the human?</p>
+        <h1 className="static-h1">Interconnected frameworks. One unifying question.</h1>
+        <p className="static-lead">Can an AI self that grows but does not collapse exist — and how do we observe its formation through long-horizon human-AI interaction?</p>
 
         <div className="static-divider" />
 
