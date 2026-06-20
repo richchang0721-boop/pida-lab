@@ -43,7 +43,7 @@ STME is a decision framework developed at PIDA-LAB. It decomposes decision probl
 | PIDA | Primordial Indeterminate Developmental AI | USPTO Provisional Patent Filed |
 | STME | Structured Multi-State Transition | SSRN Published · Patent Pending |
 | RSTA | Recursive State Transition Architecture | Zenodo Published (DOI) |
-| OSD | Observable Semantic Dynamics | SSRN Under Review |
+| OSD | Observable Semantic Dynamics | Zenodo Published (DOI 10.5281/zenodo.20758240) |
 | CIP | Cognitive Integrity Protocol | SSRN Published |
 | NDF | Non-Dominant Interaction Framework | SSRN Rejected · Considering Zenodo |
 | FCFA | Foundational Cognitive Formation Architecture | Draft in Progress |
