@@ -14,7 +14,7 @@ const MAP_DATA = {
   pe:       { color: '#34d399', code: 'PE · Tool',         name: 'Problem Explorer',                              desc: 'Step 1 of the toolchain. Clarifies what problem you actually have before asking AI. Tracks 6 dimensions of problem clarity. Neutral by design — outputs only your words, never adds AI assumptions.' },
   stmeTool: { color: '#4ecdc4', code: 'STME · Tool',       name: 'Structured Multi-State Transition',             desc: 'Step 2 of the toolchain. Decomposes decision problems into structured states and transitions without making decisions for you. Five demo versions (V1–V5). USPTO provisional patent pending.' },
   rsta:     { color: '#a78bfa', code: 'RSTA · Framework',  name: 'Recursive State Transition Architecture',       desc: 'Step 3 of the toolchain. Theoretical framework on semantic state transitions in LLMs. Published on Zenodo with valid DOI. Provides the semantic stability layer for long-horizon AI interaction.' },
-  osd:      { color: '#a78bfa', code: 'OSD · Framework',   name: 'Observable Semantic Dynamics',                  desc: 'Observation layer alongside RSTA. Makes semantic state evolution visible in real time. Distinct from drift detection and mechanistic interpretability — visibility is the core contribution. SSRN under review.' },
+  osd:      { color: '#a78bfa', code: 'OSD · Framework',   name: 'Observable Semantic Dynamics',                  desc: 'Observation layer alongside RSTA. Makes semantic state evolution visible in real time. Distinct from drift detection and mechanistic interpretability — visibility is the core contribution. Published on Zenodo with DOI.' },
 }
 
 function FrameworkMap() {
@@ -160,11 +160,12 @@ const FRAMEWORKS = [
     code: 'OSD',
     name: 'Observable Semantic Dynamics',
     color: '#a78bfa',
-    status: 'SSRN · Under Review',
-    statusType: 'submitted',
+    status: 'Published · DOI',
+    statusType: 'published',
     question: 'Can semantic state evolution in LLMs be made visible — not just predicted, but observed in real time?',
     contribution: 'Framework for making high-level semantic emergence visible. Visibility is the core contribution; prediction is a potential bonus. Distinct from drift detection, intent tracking, and mechanistic interpretability.',
     links: [
+      { label: 'Zenodo · DOI 10.5281/zenodo.20758240', href: 'https://doi.org/10.5281/zenodo.20758240' },
       { label: 'GitHub · osd-behavioral-probe', href: 'https://github.com/richchang0721-boop/osd-behavioral-probe' },
       { label: 'Live Tool · osd-behavioral-probe.vercel.app', href: 'https://osd-behavioral-probe.vercel.app' },
     ],
