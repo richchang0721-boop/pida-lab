@@ -9,8 +9,10 @@ export default function Nav() {
       </div>
       <ul className="nav-links">
         <li><Link href="/">Home</Link></li>
-        <li><Link href="/research">Research</Link></li>
-        <li><Link href="/posts">Writing</Link></li>
+        <li><Link href="/categories">Categories</Link></li>
+        <li><Link href="/posts">All Posts</Link></li>
+        <li><Link href="/for-engineers">For Engineers</Link></li>
+        <li><Link href="/for-governance">For Governance</Link></li>
         <li><Link href="/about">About</Link></li>
         <li><Link href="/demo" style={{color:'var(--accent)'}}>Demo</Link></li>
       </ul>
