@@ -26,7 +26,7 @@ This page will map the core illusions behind AI-assisted decision systems.
 
 [#4 — The Illusion of Traceable Decisions](/posts/ai-decision-illusions-4)
 
-[# — The Illusion of Delegated Responsibility](/posts/ai-decision-illusions-5)
+[#5 — The Illusion of Delegated Responsibility](/posts/ai-decision-illusions-5)
 
 \#6 — Coming Soon
 
