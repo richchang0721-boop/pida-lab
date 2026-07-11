@@ -1,130 +1,14 @@
-# PIDA-LAB
+# PIDA-LAB Relational Effects Patch
 
-**Rethinking AI Systems, Decision & Responsibility**
+## Files
+- `pages/relational-effects.js` — new research-direction page
+- `components/Nav.js` — adds a navigation link to the new page
 
-> AI is not a capability problem. It is a relationship structure failure.
+## Apply
+Copy both files into the matching paths in `richchang0721-boop/pida-lab`, then commit and push.
 
----
+Suggested commit message:
 
-## Overview
+`Add long-term human-AI relational effects research direction`
 
-PIDA-LAB is a research and publishing platform focused on AI system design, decision responsibility frameworks, and structural approaches to human-AI interaction.
-
-The site is built with Next.js, deployed on Vercel, and connected to GitHub for continuous deployment.
-
-**Live site:** [www.pida-lab.com](https://www.pida-lab.com)
-
----
-
-## STME — Structured Multi-State Transition
-
-STME is a decision framework developed at PIDA-LAB. It decomposes decision problems into structured states and transitions without making decisions for the user, preventing premature collapse of the decision space.
-
-**Research:**
-- **SSRN Paper:** [papers.ssrn.com · abstract_id=6548019](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6548019)
-- **Provisional Patent Pending (USPTO)** · Application No.: 64/045,009
-
-### Demo Versions
-
-| Version | Name | Description |
-|---------|------|-------------|
-| V1 | Core Engine | Pure structural output. No interpretation layer. |
-| V2 | Interactive Demo | Adds interpretation and user guidance. |
-| V3 | Condition-Based Analysis | Validates conditions before entering STME. |
-| V4 | Guided Scenario Demo | Preset scenarios with Demo Mode (no API key required). |
-| V5 | Full Production | Decision History, Interpretation Engine, Export / Audit. |
-
----
-
-## Research Frameworks
-
-| Framework | Full Name | Status |
-|-----------|-----------|--------|
-| PIDA | Primordial Indeterminate Developmental AI | USPTO Provisional Patent Filed |
-| STME | Structured Multi-State Transition | SSRN Published · Patent Pending |
-| RSTA | Recursive State Transition Architecture | Zenodo Published (DOI) |
-| OSD | Observable Semantic Dynamics | Zenodo Published (DOI 10.5281/zenodo.20758240) |
-| CIP | Cognitive Integrity Protocol | SSRN Published |
-| NDF | Non-Dominant Interaction Framework | SSRN Rejected · Considering Zenodo |
-| FCFA | Foundational Cognitive Formation Architecture | Draft in Progress |
-
-> FCFA is the cognitive formation core of PIDA, comprising IC (Interaction Core), IMC (Irreversible Memory Complex), and QPE (Qualia & PersEvo Engine).
-
----
-
-## Tech Stack
-
-| Layer | Tool |
-|-------|------|
-| Framework | Next.js 13 |
-| Hosting | Vercel |
-| Source Control | GitHub |
-| Content | Markdown (`.md`) |
-| Styling | CSS (globals.css) |
-| AI Integration | OpenAI API (gpt-4o-mini) |
-
----
-
-## Project Structure
-
-```
-pida-lab/
-├── components/        # Nav, Footer, ArticleCard
-├── lib/               # posts.server.js, categories.js
-├── pages/
-│   ├── demo/          # v1.js, v2.js, v3.js, v4.js, v5.js
-│   ├── posts/         # [...id].js — dynamic post rendering
-│   ├── categories/    # category pages
-│   ├── index.js       # Home
-│   ├── research.js    # Research frameworks
-│   ├── about.js
-│   ├── contact.js
-│   ├── privacy.js
-│   ├── demo.js        # Demo index
-│   └── sitemap.xml.js
-├── posts/             # Markdown articles (.md)
-├── styles/
-│   └── globals.css
-├── next.config.js
-└── vercel.json
-```
-
----
-
-## Adding New Articles
-
-Articles are written in Markdown and placed in the `posts/` folder. No local setup required — edit directly on GitHub.
-
-**File naming:** `your-article-slug.md`
-
-**Required frontmatter:**
-
-```markdown
----
-title: 'Your Article Title'
-date: '2026-05-08'
-category: 'ai-systems'
-excerpt: 'A short description of the article.'
----
-
-Article content starts here...
-```
-
-Available categories: `decision`, `responsibility`, `system`, `relationship`
-
-Once committed to `main`, Vercel automatically deploys. The sitemap updates automatically.
-
----
-
-## Contact
-
-- **Email:** richchang0721@gmail.com
-- **Research Collaboration:** [pida-lab.com/contact](https://www.pida-lab.com/contact)
-
----
-
-## License
-
-All written content on PIDA-LAB is © PIDA-LAB. All rights reserved.
-
-Code structure is available for reference. Please contact us before reuse.
+The GitHub integration returned HTTP 403 when attempting to write directly, so this patch is packaged for manual upload.
