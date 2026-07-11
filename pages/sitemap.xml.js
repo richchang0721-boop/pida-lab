@@ -14,8 +14,9 @@ export async function getServerSideProps({ res }) {
     '/posts',
     '/categories',
     '/research',
+    '/relational-effects',
     '/for-engineers',
-    '/for-governance',
+    '/for-governance',    
   ]
 
   // Dynamic: auto-generate from all posts
