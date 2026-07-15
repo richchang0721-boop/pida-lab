@@ -57,6 +57,10 @@ export default function RelationalEffects() {
             It is what prolonged interaction with adaptive and highly compliant artificial entities does to humans,
             relationships, institutions, and AI-associated identities.
           </div>
+          <p className="ltr-doi">
+            Full research agenda now published — <em>Beyond Output Safety: A Research Agenda for Long-Term Human–AI Relational Effects</em> (v1.0).{' '}
+            <a href="https://doi.org/10.5281/zenodo.21369830" target="_blank" rel="noopener noreferrer">DOI: 10.5281/zenodo.21369830</a>
+          </p>
         </header>
 
         <section className="ltr-section">
@@ -151,6 +155,9 @@ export default function RelationalEffects() {
         .ltr-subtitle { font-family: var(--mono); color: var(--text-muted); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 2.5rem; }
         .ltr-lead { max-width: 760px; font-size: 1.12rem; color: var(--text-muted); line-height: 1.9; }
         .ltr-thesis { margin-top: 2.5rem; padding: 1.6rem 1.8rem; border-left: 3px solid var(--accent); background: var(--surface); font-family: var(--serif); font-size: 1.28rem; line-height: 1.65; }
+        .ltr-doi { margin-top: 1.4rem; font-family: var(--mono); font-size: .78rem; letter-spacing: .02em; color: var(--text-muted); }
+        .ltr-doi em { font-style: italic; color: var(--text); }
+        .ltr-doi a { color: var(--accent); }
         .ltr-section { padding: 4rem 0; border-top: 1px solid var(--border); }
         .ltr-section h2 { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 400; line-height: 1.15; margin: .8rem 0 1.7rem; }
         .ltr-section > p { max-width: 780px; color: var(--text-muted); margin-bottom: 1.25rem; font-size: 1rem; line-height: 1.9; }
