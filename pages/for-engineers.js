@@ -158,7 +158,7 @@ export default function ForEngineers() {
               <div className="demo-version-card">
                 <h3 className="demo-version-card-title">STME</h3>
                 <p className="demo-version-card-desc">
-                  Decision structuring engine. SSRN paper + USPTO provisional patent pending.
+                  Decision structuring engine. Preprint on SSRN + USPTO provisional patent pending.
                 </p>
                 <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
                   <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6548019" target="_blank" rel="noreferrer" className="demo-open-btn">[ SSRN ]</a>
@@ -170,9 +170,10 @@ export default function ForEngineers() {
               <div className="demo-version-card">
                 <h3 className="demo-version-card-title">RSTA</h3>
                 <p className="demo-version-card-desc">
-                  Semantic state transition theory. Published on Zenodo with a valid DOI.
+                  Semantic state transition theory. Preprint on Zenodo, DOI: 10.5281/zenodo.20603119.
                 </p>
                 <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                  <a href="https://zenodo.org/records/20603119" target="_blank" rel="noreferrer" className="demo-open-btn">[ Zenodo · DOI ]</a>
                   <a href="https://github.com/richchang0721-boop/rsta-v2-demo-" target="_blank" rel="noreferrer" className="demo-open-btn">[ GitHub ]</a>
                 </div>
               </div>
@@ -180,7 +181,7 @@ export default function ForEngineers() {
               <div className="demo-version-card">
                 <h3 className="demo-version-card-title">OSD</h3>
                 <p className="demo-version-card-desc">
-                  Observability layer. Published on Zenodo, DOI: 10.5281/zenodo.20758240.
+                  Observability layer. Preprint on Zenodo, DOI: 10.5281/zenodo.20758240.
                 </p>
                 <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
                   <a href="https://doi.org/10.5281/zenodo.20758240" target="_blank" rel="noreferrer" className="demo-open-btn">[ Zenodo · DOI ]</a>

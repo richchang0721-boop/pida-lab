@@ -155,15 +155,17 @@ export default function ForGovernance() {
             <li><strong>PIDA</strong> — USPTO Provisional Patent No. 64/045,009</li>
             <li><strong>FCFA</strong> — Draft 0.2, introduces the Responsibility Collapse concept</li>
             <li>
-              <strong>CIP</strong> (Cognitive Integrity Protocol) — published on SSRN, cited by
+              <strong>CIP</strong> (Cognitive Integrity Protocol) — preprint on SSRN, cited by
               an Argentine professor
             </li>
             <li>
-              <strong>RSTA</strong> — published on Zenodo with a valid DOI, equivalent citability
-              to a preprint server
+              <strong>RSTA</strong> — preprint on Zenodo with a valid DOI:{' '}
+              <a href="https://zenodo.org/records/20603119" target="_blank" rel="noreferrer">
+                10.5281/zenodo.20603119
+              </a>
             </li>
             <li>
-              <strong>OSD</strong> — published on Zenodo, DOI:{' '}
+              <strong>OSD</strong> — preprint on Zenodo, DOI:{' '}
               <a href="https://doi.org/10.5281/zenodo.20758240" target="_blank" rel="noreferrer">
                 10.5281/zenodo.20758240
               </a>
