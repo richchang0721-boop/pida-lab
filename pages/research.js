@@ -13,8 +13,8 @@ const MAP_DATA = {
   ndf:      { color: '#4ecdc4', code: 'NDF · Core',        name: 'Non-Dominant Interaction Framework',            desc: 'Long-horizon interaction governance. Treats dependency, behavioral convergence, and disengagement erosion as cumulative interaction-state conditions, enforced before output. Source of the HEB concept.' },
   pe:       { color: '#34d399', code: 'PE · Tool',         name: 'Problem Explorer',                              desc: 'Step 1 of the toolchain. Clarifies what problem you actually have before asking AI. Tracks 6 dimensions of problem clarity. Neutral by design — outputs only your words, never adds AI assumptions.' },
   stmeTool: { color: '#4ecdc4', code: 'STME · Tool',       name: 'Structured Multi-State Transition',             desc: 'Step 2 of the toolchain. Decomposes decision problems into structured states and transitions without making decisions for you. Five demo versions (V1–V5). USPTO provisional patent pending.' },
-  rsta:     { color: '#a78bfa', code: 'RSTA · Framework',  name: 'Recursive State Transition Architecture',       desc: 'Step 3 of the toolchain. Theoretical framework on semantic state transitions in LLMs. Published on Zenodo with valid DOI. Provides the semantic stability layer for long-horizon AI interaction.' },
-  osd:      { color: '#a78bfa', code: 'OSD · Framework',   name: 'Observable Semantic Dynamics',                  desc: 'Observation layer alongside RSTA. Makes semantic state evolution visible in real time. Distinct from drift detection and mechanistic interpretability — visibility is the core contribution. Published on Zenodo with DOI.' },
+  rsta:     { color: '#a78bfa', code: 'RSTA · Framework',  name: 'Recursive State Transition Architecture',       desc: 'Step 3 of the toolchain. Theoretical framework on semantic state transitions in LLMs. Preprint on Zenodo with valid DOI. Provides the semantic stability layer for long-horizon AI interaction.' },
+  osd:      { color: '#a78bfa', code: 'OSD · Framework',   name: 'Observable Semantic Dynamics',                  desc: 'Observation layer alongside RSTA. Makes semantic state evolution visible in real time. Distinct from drift detection and mechanistic interpretability — visibility is the core contribution. Preprint on Zenodo with DOI.' },
 }
 
 function FrameworkMap() {
@@ -147,12 +147,12 @@ const FRAMEWORKS = [
     code: 'RSTA',
     name: 'Recursive State Transition Architecture',
     color: '#4ecdc4',
-    status: 'Published · DOI',
+    status: 'Preprint · DOI',
     statusType: 'published',
     question: 'How do semantic states transition in LLMs — and can that process be modeled formally enough to enable reproducible research?',
-    contribution: 'Theoretical framework on semantic state transitions. Accepted and published on Zenodo with a valid DOI, equivalent in citability to preprint servers.',
+    contribution: 'Theoretical framework on semantic state transitions. Posted as a preprint on Zenodo with a valid DOI, citable and open for review.',
     links: [
-      { label: 'Zenodo · Published with DOI', href: 'https://zenodo.org' },
+      { label: 'Zenodo · Preprint · DOI 10.5281/zenodo.20603119', href: 'https://zenodo.org/records/20603119' },
     ],
   },
   {
@@ -160,7 +160,7 @@ const FRAMEWORKS = [
     code: 'OSD',
     name: 'Observable Semantic Dynamics',
     color: '#a78bfa',
-    status: 'Published · DOI',
+    status: 'Preprint · DOI',
     statusType: 'published',
     question: 'Can semantic state evolution in LLMs be made visible — not just predicted, but observed in real time?',
     contribution: 'Framework for making high-level semantic emergence visible. Visibility is the core contribution; prediction is a potential bonus. Distinct from drift detection, intent tracking, and mechanistic interpretability.',
@@ -175,12 +175,12 @@ const FRAMEWORKS = [
     code: 'CIP',
     name: 'Cognitive Integrity Protocol',
     color: '#f97316',
-    status: 'Published · SSRN',
+    status: 'Preprint · SSRN',
     statusType: 'published',
     question: 'How should AI systems maintain cognitive integrity under adversarial or manipulative interaction — and what structural protocol enforces it?',
-    contribution: 'Published on SSRN. Cited by an Argentine professor. Defines five non-negotiable red lines for brain-computer interfaces and the structural conditions under which cognitive integrity can be verified and maintained.',
+    contribution: 'Posted as a preprint on SSRN. Cited by an Argentine professor. Defines five non-negotiable red lines for brain-computer interfaces and the structural conditions under which cognitive integrity can be verified and maintained.',
     links: [
-      { label: 'SSRN · Published', href: 'https://ssrn.com' },
+      { label: 'SSRN · Preprint', href: 'https://ssrn.com' },
     ],
   },
   {
@@ -199,7 +199,7 @@ const FRAMEWORKS = [
     code: 'STME',
     name: 'Structured Multi-State Transition',
     color: '#34d399',
-    status: 'Published · SSRN',
+    status: 'Preprint · SSRN',
     statusType: 'published',
     question: 'How can decision problems be decomposed into structured states and transitions — without the system making the decision for the user?',
     contribution: 'Decision framework that maps states, identifies structural pressure, and ranks transitions while preventing premature collapse of the decision space. Five demo versions available. USPTO provisional patent pending.',
