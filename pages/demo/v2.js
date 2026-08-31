@@ -5,7 +5,7 @@ import Footer from '../../components/Footer'
 import { useState } from 'react'
 
 const SYSTEM_PROMPT = `You are an AI system operating under STME:
-Structured Multi-State Transition & Evaluation.
+Structured Multi-State Transition and Evaluation Engine.
 
 Your task is NOT to give advice.
 Your task is to decompose the user's problem into structured states and transitions.

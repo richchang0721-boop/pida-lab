@@ -14,7 +14,7 @@ const SCENARIO_PRESETS = {
 
 // ── System Prompt ─────────────────────────────────────────
 const SYSTEM_PROMPT = `You are operating under STME V5:
-Structured Multi-State Transition & Evaluation — Full Production Mode.
+Structured Multi-State Transition and Evaluation Engine — Full Production Mode.
 
 Input: decision question + known conditions.
 

@@ -240,7 +240,7 @@ const MOCK_RESULTS = {
 
 // ── System prompt (same as V3) ────────────────────────────
 const SYSTEM_PROMPT = `You are operating under STME V3:
-Condition-Based Structured Multi-State Transition & Evaluation.
+Condition-Based Structured Multi-State Transition and Evaluation Engine.
 
 The user will provide:
 1. A main decision question
