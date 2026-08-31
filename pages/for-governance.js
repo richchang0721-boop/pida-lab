@@ -180,6 +180,24 @@ export default function ForGovernance() {
         <div className="static-divider" />
 
         <div className="static-section">
+          <h2>Before You Apply This</h2>
+          <p>
+            PIDA is a <strong>pre-incident</strong> framework. It applies to design-time,
+            training-time, and developmental stages — not to live operation, real-time
+            decision-making, physical actuation, or post-incident liability determination.
+          </p>
+          <p>
+            Twelve application domains are <strong>explicitly excluded</strong>, and referencing
+            PIDA does not transfer implementation or deployment responsibility to its author. If
+            you are evaluating PIDA for a governance or compliance context, read the boundary
+            disclosure first.
+          </p>
+          <Link href="/scope" className="demo-open-btn">[ Scope Limitations →]</Link>
+        </div>
+
+        <div className="static-divider" />
+
+        <div className="static-section">
           <h2>Collaborate</h2>
           <p>
             If your work touches AI governance, accountability design, or enterprise risk review

@@ -17,6 +17,7 @@ export async function getServerSideProps({ res }) {
     '/relational-effects',
     '/for-engineers',
     '/for-governance',    
+    '/scope',
   ]
 
   // Dynamic: auto-generate from all posts
