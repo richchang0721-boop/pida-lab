@@ -9,10 +9,10 @@ const MAP_DATA = {
   psp:      { color: '#e8ff47', code: 'PSP · L1',          name: 'Persona Sovereignty Protocol',                  desc: 'Governance and authority layer. Defines ownership, lifecycle rules, and post-user governance. Authority flows: Primary User → Successor → System Authority → Exception Access.' },
   fcfa:     { color: '#4ecdc4', code: 'FCFA · Core',       name: 'Foundational Cognitive Formation Architecture', desc: 'Cognitive formation layer. Comprises IC (Interaction Core), IMC (Irreversible Memory Complex), and QPE (Qualia & PersEvo Engine). Experiential formation without explicit instruction; identity persistence is irreversible anchoring.' },
   scl:      { color: '#4ecdc4', code: 'SCL · Core',        name: 'Search Constraint Layer',                       desc: 'Search space governance. Projects constraints from HEB, PSP, and FCFA. Enforces multi-perspective, counter-examples, and boundary cases. Prevents single-narrative bias and drift.' },
-  stmeCore: { color: '#4ecdc4', code: 'STME · Core',       name: 'Structured Multi-State Transition',             desc: 'Decision-state framework. Maintains multiple concurrent decision states and evolves them through a transition grammar — preventing premature collapse of the decision space.' },
-  ndf:      { color: '#4ecdc4', code: 'NDF · Core',        name: 'Non-Dominant Interaction Framework',            desc: 'Long-horizon interaction governance. Treats dependency, behavioral convergence, and disengagement erosion as cumulative interaction-state conditions, enforced before output. Source of the HEB concept.' },
+  stmeCore: { color: '#4ecdc4', code: 'STME · Core',       name: 'Structured Multi-State Transition and Evaluation Engine',             desc: 'Decision-state framework. Maintains multiple concurrent decision states and evolves them through a transition grammar — preventing premature collapse of the decision space.' },
+  ndf:      { color: '#4ecdc4', code: 'NDF · Core',        name: 'Non-Dominant Framework',            desc: 'Long-horizon interaction governance. Treats dependency, behavioral convergence, and disengagement erosion as cumulative interaction-state conditions, enforced before output. Source of the HEB concept.' },
   pe:       { color: '#34d399', code: 'PE · Tool',         name: 'Problem Explorer',                              desc: 'Step 1 of the toolchain. Clarifies what problem you actually have before asking AI. Tracks 6 dimensions of problem clarity. Neutral by design — outputs only your words, never adds AI assumptions.' },
-  stmeTool: { color: '#4ecdc4', code: 'STME · Tool',       name: 'Structured Multi-State Transition',             desc: 'Step 2 of the toolchain. Decomposes decision problems into structured states and transitions without making decisions for you. Five demo versions (V1–V5). USPTO provisional patent pending.' },
+  stmeTool: { color: '#4ecdc4', code: 'STME · Tool',       name: 'Structured Multi-State Transition and Evaluation Engine',             desc: 'Step 2 of the toolchain. Decomposes decision problems into structured states and transitions without making decisions for you. Five demo versions (V1–V5). USPTO provisional patent pending.' },
   rsta:     { color: '#a78bfa', code: 'RSTA · Framework',  name: 'Recursive State Transition Architecture',       desc: 'Step 3 of the toolchain. Theoretical framework on semantic state transitions in LLMs. Preprint on Zenodo with valid DOI. Provides the semantic stability layer for long-horizon AI interaction.' },
   osd:      { color: '#a78bfa', code: 'OSD · Framework',   name: 'Observable Semantic Dynamics',                  desc: 'Observation layer alongside RSTA. Makes semantic state evolution visible in real time. Distinct from drift detection and mechanistic interpretability — visibility is the core contribution. Preprint on Zenodo with DOI.' },
 }
@@ -197,7 +197,7 @@ const FRAMEWORKS = [
   {
     id: 'stme',
     code: 'STME',
-    name: 'Structured Multi-State Transition',
+    name: 'Structured Multi-State Transition and Evaluation Engine',
     color: '#34d399',
     status: 'Preprint · SSRN',
     statusType: 'published',
@@ -212,7 +212,7 @@ const FRAMEWORKS = [
   {
     id: 'ndf',
     code: 'NDF',
-    name: 'Non-Dominant Interaction Framework',
+    name: 'Non-Dominant Framework',
     color: '#4ecdc4',
     status: 'SSRN Rejected · Considering Zenodo',
     statusType: 'draft',

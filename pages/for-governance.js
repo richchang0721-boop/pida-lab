@@ -99,7 +99,7 @@ export default function ForGovernance() {
 
         {/* ── NDF ── */}
         <div className="static-section">
-          <h2>NDF — Non-Dominant Interaction Framework</h2>
+          <h2>NDF — Non-Dominant Framework</h2>
           <p>
             NDF governs the shape of <strong>long-horizon interaction</strong> so that, over
             extended engagement, the system does not accumulate structural influence over a

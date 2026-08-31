@@ -43,7 +43,7 @@ function PidaArchitecture() {
       color: '#4ecdc4',
       borderColor: '#4ecdc4',
       desc: 'Four integrated subsystems operating under PSP governance. Each subsystem is constrained by HEB and governed by PSP rules before execution.',
-      modules: ['FCFA — Cognitive formation (incl. IC + IMC + QPE)', 'SCL — Search constraint', 'STME — Structured Multi-State Transition', 'NDF — Non-Dominant Interaction Framework'],
+      modules: ['FCFA — Cognitive formation (incl. IC + IMC + QPE)', 'SCL — Search constraint', 'STME — Structured Multi-State Transition and Evaluation Engine', 'NDF — Non-Dominant Framework (+ Co-Evolution Protocol)'],
       principle: 'FCFA provides experiential formation without explicit instruction, with irreversible identity anchoring. STME prevents premature decision collapse; NDF governs long-horizon interaction.',
     },
     {

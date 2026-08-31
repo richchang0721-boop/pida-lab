@@ -52,7 +52,7 @@ export default function ForEngineers() {
               },
               {
                 tag: 'STRUCTURE', tagClass: 'tag-structural',
-                name: 'STME — Structured Multi-State Transition & Evaluation',
+                name: 'STME — Structured Multi-State Transition and Evaluation Engine',
                 desc: 'Decomposes the clarified problem into states and transitions, flags structural pressure, and ranks transitions. Does not output a recommendation.',
                 io: 'in: clarified problem · out: state graph + transition ranking'
               },
