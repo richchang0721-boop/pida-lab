@@ -15,6 +15,7 @@ export default function Nav() {
         <li><Link href="/relational-effects" style={{color:'var(--accent)'}}>Relational Effects</Link></li>
         <li><Link href="/for-engineers">For Engineers</Link></li>
         <li><Link href="/for-governance">For Governance</Link></li>
+        <li><Link href="/scope">Scope</Link></li>
         <li><Link href="/about">About</Link></li>
         <li><Link href="/demo" style={{color:'var(--accent)'}}>Demo</Link></li>
       </ul>
