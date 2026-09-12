@@ -9,6 +9,7 @@ export default function About() {
       <Head>
         <title>About — PIDA-LAB</title>
         <meta name="description" content="PIDA-LAB is an independent AI research platform exploring the structural relationship between humans and AI systems." />
+        <meta name="author" content="Mao-Lin Chang (Rich Chang)" />
       </Head>
       <Nav />
       <div className="static-page">
@@ -23,6 +24,16 @@ export default function About() {
         <div className="static-section">
           <h2>Who is behind this</h2>
           <p>Mao Lin Chang is an independent AI researcher based in Cambodia, operating under pida-lab.com. Background in IT management with substantial hardware engineering experience. Research is conducted as a side project alongside a full-time day job, limiting available hours to evenings.</p>
+          <p>
+            Professional profile:{' '}
+            <a
+              href="https://www.linkedin.com/in/%E8%8C%82%E9%9C%96-%E8%8E%8A-7aa81b11a"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn — Mao-Lin Chang / Rich Chang
+            </a>
+          </p>
           <p>This work is intentionally counter-mainstream: not built around commercialization, rapid deployment, or scalability. The deeper research question is what happens to people who interact long-term with an entity that never refuses or resists — and what structural safeguards should exist before that interaction becomes the norm.</p>
         </div>
 
