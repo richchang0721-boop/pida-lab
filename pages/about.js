@@ -23,8 +23,7 @@ export default function About() {
 
         <div className="static-section">
           <h2>Who is behind this</h2>
-          <p>Mao Lin Chang is an independent AI researcher based in Cambodia, operating under pida-lab.com. Background in IT management with substantial hardware engineering experience. Research is conducted as a side project alongside a full-time day job, limiting available hours to evenings.</p>
-          <p>
+            <p>Mao Lin Chang is an independent AI researcher based in Cambodia, operating under pida-lab.com. He also writes fiction under the pen name Yifei Shang (憶飛傷). Background in IT management with substantial hardware engineering experience. Research is conducted as a side project alongside a full-time day job, limiting available hours to evenings.</p>          <p>
             Professional profile:{' '}
             <a
               href="https://www.linkedin.com/in/%E8%8C%82%E9%9C%96-%E8%8E%8A-7aa81b11a"
