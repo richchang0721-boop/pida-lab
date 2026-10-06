@@ -23,7 +23,7 @@ export default function About() {
 
         <div className="static-section">
           <h2>Who is behind this</h2>
-            <p>Mao Lin Chang is an independent AI researcher based in Cambodia, operating under pida-lab.com. He also writes fiction under the pen name Yifei Shang (憶飛傷). Background in IT management with substantial hardware engineering experience. Research is conducted as a side project alongside a full-time day job, limiting available hours to evenings.</p>          <p>
+            <p>Mao Lin Chang / 莊茂霖 is an independent AI researcher based in Cambodia, operating under pida-lab.com. He also writes fiction under the pen name 憶飛傷 / Yifei Shang . Background in IT management with substantial hardware engineering experience. Research is conducted as a side project alongside a full-time day job, limiting available hours to evenings.</p>          <p>
             Professional profile:{' '}
             <a
               href="https://www.linkedin.com/in/%E8%8C%82%E9%9C%96-%E8%8E%8A-7aa81b11a"
@@ -31,6 +31,14 @@ export default function About() {
               rel="noopener noreferrer"
             >
               LinkedIn — Mao-Lin Chang / Rich Chang
+            </a>
+                &nbsp; | &nbsp;
+            <a
+              href="https://x.com/rich_chang0721"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              X — @rich_chang0721
             </a>
           </p>
           <p>This work is intentionally counter-mainstream: not built around commercialization, rapid deployment, or scalability. The deeper research question is what happens to people who interact long-term with an entity that never refuses or resists — and what structural safeguards should exist before that interaction becomes the norm.</p>
